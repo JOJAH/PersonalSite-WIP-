@@ -1,0 +1,775 @@
+{
+    "nodes": [
+        {
+            "ip": "121.4.2.27",
+            "mac": "00:d0:c9:f7:1d:c4",
+            "sent": 15,
+            "recieved": 30,
+            "packetTotal": 45,
+            "nodeNumber": 1
+        },
+        {
+            "ip": "121.4.0.23",
+            "mac": "b8:cb:29:ac:49:c1/b8:cb:29:ac:49:c2",
+            "sent": 1787,
+            "recieved": 952,
+            "packetTotal": 2739,
+            "nodeNumber": 2
+        },
+        {
+            "ip": "121.4.4.83",
+            "mac": "00:90:e8:76:15:a3",
+            "sent": 12,
+            "recieved": 12,
+            "packetTotal": 24,
+            "nodeNumber": 3
+        },
+        {
+            "ip": "121.4.2.36",
+            "mac": "00:e0:46:16:11:79",
+            "sent": 106,
+            "recieved": 212,
+            "packetTotal": 318,
+            "nodeNumber": 4
+        },
+        {
+            "ip": "121.4.2.35",
+            "mac": "00:e0:46:16:11:7f",
+            "sent": 106,
+            "recieved": 212,
+            "packetTotal": 318,
+            "nodeNumber": 5
+        },
+        {
+            "ip": "121.4.2.19",
+            "mac": "00:d0:c9:f6:da:7a",
+            "sent": 20,
+            "recieved": 20,
+            "packetTotal": 40,
+            "nodeNumber": 6
+        },
+        {
+            "ip": "121.4.4.67",
+            "mac": "00:0d:8d:02:43:a8",
+            "sent": 20,
+            "recieved": 40,
+            "packetTotal": 60,
+            "nodeNumber": 7
+        },
+        {
+            "ip": "121.4.5.4",
+            "mac": "00:0d:8d:06:3a:29",
+            "sent": 21,
+            "recieved": 42,
+            "packetTotal": 63,
+            "nodeNumber": 8
+        },
+        {
+            "ip": "121.4.5.3",
+            "mac": "00:0d:8d:06:3a:07",
+            "sent": 16,
+            "recieved": 48,
+            "packetTotal": 64,
+            "nodeNumber": 9
+        },
+        {
+            "ip": "121.4.2.23",
+            "mac": "00:d0:c9:f6:da:34",
+            "sent": 58,
+            "recieved": 116,
+            "packetTotal": 174,
+            "nodeNumber": 10
+        },
+        {
+            "ip": "121.4.4.69",
+            "mac": "00:90:e8:58:60:d8",
+            "sent": 40,
+            "recieved": 40,
+            "packetTotal": 80,
+            "nodeNumber": 11
+        },
+        {
+            "ip": "121.4.4.84",
+            "mac": "00:90:e8:76:15:ec",
+            "sent": 24,
+            "recieved": 24,
+            "packetTotal": 48,
+            "nodeNumber": 12
+        },
+        {
+            "ip": "121.4.2.34",
+            "mac": "00:0d:8d:05:b7:c1",
+            "sent": 33,
+            "recieved": 60,
+            "packetTotal": 93,
+            "nodeNumber": 13
+        },
+        {
+            "ip": "121.4.5.2",
+            "mac": "00:0d:8d:06:3a:43",
+            "sent": 45,
+            "recieved": 90,
+            "packetTotal": 135,
+            "nodeNumber": 14
+        },
+        {
+            "ip": "121.4.4.66",
+            "mac": "00:11:b4:00:84:07",
+            "sent": 63,
+            "recieved": 87,
+            "packetTotal": 150,
+            "nodeNumber": 15
+        },
+        {
+            "ip": "121.4.2.38",
+            "mac": "00:e0:46:16:0e:4a",
+            "sent": 86,
+            "recieved": 172,
+            "packetTotal": 258,
+            "nodeNumber": 16
+        },
+        {
+            "ip": "121.4.2.37",
+            "mac": "00:e0:46:16:0e:40",
+            "sent": 42,
+            "recieved": 84,
+            "packetTotal": 126,
+            "nodeNumber": 17
+        },
+        {
+            "ip": "121.4.2.31",
+            "mac": "00:0d:8d:05:96:f0",
+            "sent": 58,
+            "recieved": 179,
+            "packetTotal": 237,
+            "nodeNumber": 18
+        },
+        {
+            "ip": "121.4.2.32",
+            "mac": "00:0d:8d:02:33:6c",
+            "sent": 90,
+            "recieved": 180,
+            "packetTotal": 270,
+            "nodeNumber": 19
+        },
+        {
+            "ip": "172.30.0.3",
+            "mac": "10:98:36:ab:16:47",
+            "sent": 1,
+            "recieved": 0,
+            "packetTotal": 1,
+            "nodeNumber": 20
+        },
+        {
+            "ip": "172.17.0.118",
+            "mac": "e8:eb:34:bf:71:3e",
+            "sent": 0,
+            "recieved": 1,
+            "packetTotal": 1,
+            "nodeNumber": 21
+        },
+        {
+            "ip": "121.4.5.13",
+            "mac": "00:90:e8:76:15:a8",
+            "sent": 3,
+            "recieved": 3,
+            "packetTotal": 6,
+            "nodeNumber": 22
+        },
+        {
+            "ip": "121.4.2.33",
+            "mac": "00:0d:8d:05:b7:b7",
+            "sent": 18,
+            "recieved": 54,
+            "packetTotal": 72,
+            "nodeNumber": 23
+        },
+        {
+            "ip": "121.4.4.81",
+            "mac": "00:90:e8:76:15:97",
+            "sent": 10,
+            "recieved": 10,
+            "packetTotal": 20,
+            "nodeNumber": 24
+        },
+        {
+            "ip": "121.4.4.86",
+            "mac": "00:90:e8:71:73:e8",
+            "sent": 20,
+            "recieved": 20,
+            "packetTotal": 40,
+            "nodeNumber": 25
+        },
+        {
+            "ip": "121.4.4.85",
+            "mac": "00:90:e8:76:15:eb",
+            "sent": 20,
+            "recieved": 20,
+            "packetTotal": 40,
+            "nodeNumber": 26
+        },
+        {
+            "ip": "121.4.4.82",
+            "mac": "00:90:e8:76:16:d1",
+            "sent": 10,
+            "recieved": 10,
+            "packetTotal": 20,
+            "nodeNumber": 27
+        },
+        {
+            "ip": "121.4.4.65",
+            "mac": "00:11:b4:00:84:04",
+            "sent": 14,
+            "recieved": 20,
+            "packetTotal": 34,
+            "nodeNumber": 28
+        },
+        {
+            "ip": "121.4.5.11",
+            "mac": "00:90:e8:76:15:d5",
+            "sent": 2,
+            "recieved": 2,
+            "packetTotal": 4,
+            "nodeNumber": 29
+        }
+    ],
+    "connections": [
+        {
+            "source": 1,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.2.27",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:d0:c9:f7:1d:c4",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 15
+        },
+        {
+            "source": 2,
+            "target": 1,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.2.27",
+            "sourceMac": "b8:cb:29:ac:49:c2",
+            "destinationMac": "00:d0:c9:f7:1d:c4",
+            "count": 30
+        },
+        {
+            "source": 2,
+            "target": 3,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.4.83",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:90:e8:76:15:a3",
+            "count": 12
+        },
+        {
+            "source": 3,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.4.83",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:90:e8:76:15:a3",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 12
+        },
+        {
+            "source": 2,
+            "target": 4,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.2.36",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:e0:46:16:11:79",
+            "count": 212
+        },
+        {
+            "source": 4,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.2.36",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:e0:46:16:11:79",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 106
+        },
+        {
+            "source": 2,
+            "target": 5,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.2.35",
+            "sourceMac": "b8:cb:29:ac:49:c2",
+            "destinationMac": "00:e0:46:16:11:7f",
+            "count": 212
+        },
+        {
+            "source": 5,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.2.35",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:e0:46:16:11:7f",
+            "destinationMac": "b8:cb:29:ac:49:c2",
+            "count": 106
+        },
+        {
+            "source": 2,
+            "target": 6,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.2.19",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:d0:c9:f6:da:7a",
+            "count": 20
+        },
+        {
+            "source": 2,
+            "target": 7,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.4.67",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:0d:8d:02:43:a8",
+            "count": 40
+        },
+        {
+            "source": 6,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.2.19",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:d0:c9:f6:da:7a",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 20
+        },
+        {
+            "source": 7,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.4.67",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:0d:8d:02:43:a8",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 20
+        },
+        {
+            "source": 2,
+            "target": 8,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.5.4",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:0d:8d:06:3a:29",
+            "count": 42
+        },
+        {
+            "source": 8,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.5.4",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:0d:8d:06:3a:29",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 21
+        },
+        {
+            "source": 2,
+            "target": 9,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.5.3",
+            "sourceMac": "b8:cb:29:ac:49:c2",
+            "destinationMac": "00:0d:8d:06:3a:07",
+            "count": 48
+        },
+        {
+            "source": 9,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.5.3",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:0d:8d:06:3a:07",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 16
+        },
+        {
+            "source": 10,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.2.23",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:d0:c9:f6:da:34",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 58
+        },
+        {
+            "source": 2,
+            "target": 10,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.2.23",
+            "sourceMac": "b8:cb:29:ac:49:c2",
+            "destinationMac": "00:d0:c9:f6:da:34",
+            "count": 116
+        },
+        {
+            "source": 2,
+            "target": 11,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.4.69",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:90:e8:58:60:d8",
+            "count": 40
+        },
+        {
+            "source": 11,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.4.69",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:90:e8:58:60:d8",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 40
+        },
+        {
+            "source": 2,
+            "target": 12,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.4.84",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:90:e8:76:15:ec",
+            "count": 24
+        },
+        {
+            "source": 2,
+            "target": 13,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.2.34",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:0d:8d:05:b7:c1",
+            "count": 60
+        },
+        {
+            "source": 2,
+            "target": 14,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.5.2",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:0d:8d:06:3a:43",
+            "count": 90
+        },
+        {
+            "source": 12,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.4.84",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:90:e8:76:15:ec",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 24
+        },
+        {
+            "source": 14,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.5.2",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:0d:8d:06:3a:43",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 45
+        },
+        {
+            "source": 13,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.2.34",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:0d:8d:05:b7:c1",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 33
+        },
+        {
+            "source": 2,
+            "target": 15,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.4.66",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:11:b4:00:84:07",
+            "count": 87
+        },
+        {
+            "source": 2,
+            "target": 16,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.2.38",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:e0:46:16:0e:4a",
+            "count": 172
+        },
+        {
+            "source": 16,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.2.38",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:e0:46:16:0e:4a",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 86
+        },
+        {
+            "source": 2,
+            "target": 17,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.2.37",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:e0:46:16:0e:40",
+            "count": 84
+        },
+        {
+            "source": 17,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.2.37",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:e0:46:16:0e:40",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 42
+        },
+        {
+            "source": 2,
+            "target": 18,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.2.31",
+            "sourceMac": "b8:cb:29:ac:49:c2",
+            "destinationMac": "00:0d:8d:05:96:f0",
+            "count": 179
+        },
+        {
+            "source": 18,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.2.31",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:0d:8d:05:96:f0",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 58
+        },
+        {
+            "source": 2,
+            "target": 19,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.2.32",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:0d:8d:02:33:6c",
+            "count": 180
+        },
+        {
+            "source": 19,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.2.32",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:0d:8d:02:33:6c",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 90
+        },
+        {
+            "source": 15,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.4.66",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:11:b4:00:84:07",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 63
+        },
+        {
+            "source": 20,
+            "target": 21,
+            "protocol": "TCP",
+            "sourceIp": "172.30.0.3",
+            "destinationIp": "172.17.0.118",
+            "sourceMac": "10:98:36:ab:16:47",
+            "destinationMac": "e8:eb:34:bf:71:3e",
+            "count": 1
+        },
+        {
+            "source": 22,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.5.13",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:90:e8:76:15:a8",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 3
+        },
+        {
+            "source": 2,
+            "target": 22,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.5.13",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:90:e8:76:15:a8",
+            "count": 3
+        },
+        {
+            "source": 2,
+            "target": 23,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.2.33",
+            "sourceMac": "b8:cb:29:ac:49:c2",
+            "destinationMac": "00:0d:8d:05:b7:b7",
+            "count": 54
+        },
+        {
+            "source": 23,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.2.33",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:0d:8d:05:b7:b7",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 18
+        },
+        {
+            "source": 2,
+            "target": 24,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.4.81",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:90:e8:76:15:97",
+            "count": 10
+        },
+        {
+            "source": 24,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.4.81",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:90:e8:76:15:97",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 10
+        },
+        {
+            "source": 2,
+            "target": 25,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.4.86",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:90:e8:71:73:e8",
+            "count": 20
+        },
+        {
+            "source": 25,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.4.86",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:90:e8:71:73:e8",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 20
+        },
+        {
+            "source": 2,
+            "target": 26,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.4.85",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:90:e8:76:15:eb",
+            "count": 20
+        },
+        {
+            "source": 26,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.4.85",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:90:e8:76:15:eb",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 20
+        },
+        {
+            "source": 2,
+            "target": 27,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.4.82",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:90:e8:76:16:d1",
+            "count": 10
+        },
+        {
+            "source": 27,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.4.82",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:90:e8:76:16:d1",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 10
+        },
+        {
+            "source": 2,
+            "target": 28,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.4.65",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:11:b4:00:84:04",
+            "count": 20
+        },
+        {
+            "source": 28,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.4.65",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:11:b4:00:84:04",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 14
+        },
+        {
+            "source": 29,
+            "target": 2,
+            "protocol": "TCP",
+            "sourceIp": "121.4.5.11",
+            "destinationIp": "121.4.0.23",
+            "sourceMac": "00:90:e8:76:15:d5",
+            "destinationMac": "b8:cb:29:ac:49:c1",
+            "count": 2
+        },
+        {
+            "source": 2,
+            "target": 29,
+            "protocol": "TCP",
+            "sourceIp": "121.4.0.23",
+            "destinationIp": "121.4.5.11",
+            "sourceMac": "b8:cb:29:ac:49:c1",
+            "destinationMac": "00:90:e8:76:15:d5",
+            "count": 2
+        }
+    ],
+    "uniqueProtocols": [
+        "TCP"
+    ],
+    "connectionCountLevel": 42.4,
+    "packetsSentLevel": 89.35,
+    "packetsRecievedLevel": 47.6,
+    "totalPacketLevel": 136.95
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Network Topology Visualisation</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src='script.js'></script>
+    </head>
+<body>
+     <!--LEFT SIDE BAR -->
+    <!--#https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp -->
+    <div id="leftSidebar">
+        <button class="closebtn" onclick="closeLeftNav()">close</button>
+        <div class="sidebarDataFilterContainer">
+            <!--PROTOCOL DATA FILTER-->
+            <div class="SideBarFilter" >
+                <h3>Protocol Colouring</h3>
+                <p>Select a colour and then a protocol listed to apply that colour </p>
+                <input type="color" id="colourPicker" onchange="changeLineColour()">
+                <p id="sidebarProtocolFilter"></p>
+            </div>
+            <!--CONNECTION THICKNESS DATA FILTER-->
+            <div class="SideBarFilter" >
+                <h3>Connection activity</h3>
+                <input type="checkbox" id="connectionsThicknessCheckbox" onclick="updateLineThickness()" name="connectionsThicknessCheckbox">
+                <label for="connectionsThicknessCheckbox">Select here to show traffic density</label>
+            </div>
+            <!--DEVICE ACTIViTY NODE SIZE DATA FILTER-->
+            <div class="SideBarFilter" >
+                <h3>Device activity</h3>
+
+                <p>Select from the following checkboxes to show device packet activity</p>
+                <input type="checkbox" id="sentPacketCheckbox" onclick="updateNodeSizeSent()" name="sPacket">
+                <label for="sPacket">Sent Packets</label>
+                <br>
+                <input type="checkbox" id="recievedPacketCheckbox" onclick="updateNodeSizeRecieved()" name="rPacket">
+                <label for="rPacket">Recieved Packets</label>
+                <br>
+                <input type="checkbox" id="totalPacketCheckbox" onclick="updateNodeSizeTotal()" name="tPacket">
+                <label for="tPacket">Total Packet interaction</label>
+            </div>
+            <!--LABEL DATA FILTER-->
+            <div class="SideBarFilter" >
+                <h3>Device Labels</h3>
+                
+                <p id="sidebarDataFilter">Select from the following checkboxes to choose how the device nodes are labelled<p>
+                <input type="checkbox" id = "macCheckBox" name='mName' onclick="updateNodeNameMac()" checked="true" disabled>
+                <label for="mName">Mac Address</label>
+                <br>
+                <input type="checkbox" id = "ipCheckBox" name='iName' onclick="updateNodeNameIp()">
+                <label for="iName">IP Address</label>
+                <br>
+                <input type="checkbox" id = "noneCheckBox" name='nName' onclick="updateNodeNameNone()">
+                <label for="nName" id ='deviceColourPickerLabel'>No Name</label>    
+            </div>
+        </div>
+    </div>
+    
+    <div id="main">
+        <!--OPEN DATA FILTER (LEFT) SIDE BAR -->
+        <button id="openbtn" class="openbtn" onclick="openLeftNav()">Data Filters Sidebar</button>
+        <!--SVG D3 BUILDS TOPOLOGY IN-->
+        <svg id = "networkTopology"></svg>
+    </div>
+    <!--RIGHT SIDEBAR-->
+    <div id="rightSidebar">
+        <button onclick="closeRightSidebar()">close</button>
+        <h2 id="rightSidebarTitle"></h2>
+        <div id="rightSidebarContent"></div>
+        <div id = "deviceColourPickerDiv">
+            <input type="color" id="deviceColourPicker" value="#0000ff" onchange="changeDeviceColour()" name='DeviceCP'>
+            <label for="DeviceCP">Select Device Colour</label>
+        </div>
+    </div>
+
+</body>
+</html>

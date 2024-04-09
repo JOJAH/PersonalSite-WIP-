@@ -1,0 +1,81 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+header, footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%; /* Set width to 100% */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+.splitContainer {
+    display: flex;
+    height: 80%; /* Adjusted height to accommodate header and footer */
+    width: 100%; /* Set width to 100% */
+}
+.splitLeft, .splitRight {
+    height: 100%; /* Set height to 100% */
+}
+.splitLeft {
+    width: 50%;
+    background-color: red;
+    transition: width 1s ease;
+}
+.splitRight {
+    width: 50%;
+    background-color: blue;
+    transition: width 1s ease;
+    position: relative;
+}
+.projectsTitle {
+    position:absolute;
+    bottom: 50%;
+    font-size: 40px;
+    transform: translate(0, 50%);
+    transition: font-size 1s, bottom 1s;
+}
+.splitRight:hover .projectsTitle{
+    font-size: 16px;
+    bottom: 80%;
+    transition: translate(0,0);
+}
+.projectsLinks {
+    display:none;
+    margin-top: 10%;
+}
+.splitRight:hover .projectsLinks{
+    display: block;
+}
+.splitLeft:hover {
+    width: 200%; /* Adjusted width on hover */
+}
+.splitRight:hover {
+    width: 200%; /* Adjusted width on hover */
+}
+header {
+    height: 10%;
+}
+footer {
+    height: 10%; /* Adjusted height of the footer */
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+footer a:last-child {
+    margin-right: 0;
+}
+footer a {
+    margin: 0;
+    margin-left: 10px;
+}
