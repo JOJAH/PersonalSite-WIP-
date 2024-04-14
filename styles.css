@@ -9,7 +9,14 @@ header, footer {
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box; 
+}
+.headerTitle{
+    transition: font-size 1s
+}
+
+header:hover .headerTitle{
+    font-size: 20px;
 }
 .splitContainer {
     display: flex;
@@ -46,7 +53,7 @@ header, footer {
 .projectsLinks {
     display:none;
     position: absolute;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 .splitRight:hover .projectsLinks{
     display: block;
@@ -55,25 +62,41 @@ header, footer {
 .splitRight:hover, .splitLeft:hover {
     width: 200%;
 }
+
+.aboutMe {
+    display:none;
+    position: absolute;
+    margin-top: 5%;
+}
+.splitLeft:hover .aboutMe {
+    display: block;
+}
 header {
     height: 10%;
 }
 footer {
-    height: 10%; /* Adjusted height of the footer */
-    position: absolute;
+    height: 10%; 
+
     bottom: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
 }
 footer a {
     color: white;
-    text-decoration: none;
-    margin-right: 10px;
-    margin: 0;
-    margin-left: 10px;
+    
+
 }
-footer a:last-child {
-    margin-right: 0;
+.footerLeft, .footerRight {
+    width: 50%;
+}
+.footerRight {
+    text-align: right;
+}
+.footerEmail{
+    margin-right: 2vw;
+    transition: transform 1s, font-size 1s;
+}
+
+.footerRight:hover .footerEmail{
+    transform: translateX(-10%);
+    font-size: 17px;
 }
