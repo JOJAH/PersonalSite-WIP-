@@ -125,4 +125,9 @@ footer a {
     width: 46px ; 
     height: 45px;
     padding-left: 10px;
+    transition: width 0.5s;
+}
+.footerLeft:hover img{
+    width: 69px ; 
+    height: 67.5px;
 }
