@@ -3,12 +3,11 @@ body, html {
     padding: 0;
     height: 100%;
 }
-header, footer {
+header {
     background-color: black;
     color: white;
     text-align: center;
     padding: 10px 0;
-    width: 100%;
     box-sizing: border-box; 
 }
 .headerTitle{
@@ -79,11 +78,11 @@ footer {
     padding: 0;
     bottom: 0;
     display: flex;
+    color: white;
+    background-color: black;
 }
 footer a {
     color: white;
-    
-
 }
 .footerLeft, .footerRight {
     width: 50%;
