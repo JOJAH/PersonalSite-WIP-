@@ -95,8 +95,19 @@ footer a {
     margin-right: 2vw;
     transition: transform 1s, font-size 1s;
 }
-
 .footerRight:hover .footerEmail{
     transform: translateX(-10%);
     font-size: 17px;
+}
+.emailToolTip{
+    visibility: hidden;
+    position: relative;
+    color: white;
+}
+.footerEmail:hover{
+    cursor: pointer;
+    color: lawnGreen;
+}
+.footerEmail:hover .emailToolTip{
+    visibility: visible;
 }

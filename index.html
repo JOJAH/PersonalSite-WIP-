@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Split Page</title>
-<link rel="stylesheet" href="styles.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+<link rel="stylesheet" href="styles.css"> 
 
 </head>
 <body>
@@ -37,10 +37,21 @@
         <a href="https://github.com/JOJAH"><i class="fab fa-github"></i></a> 
     </div>
     <div class="footerRight">
-        <h5 class="footerEmail">Jakehearn1997@gmail.com</h5> 
+        <h5 class="footerEmail" id="footerEmail" onclick="copyEmail()">Jakehearn1997@gmail.com
+            <span class="emailToolTip" >Copy to Clipboard</span>
+        </h5> 
         
     </div>
 </footer>
 
 </body>
+<script>
+    function copyEmail() {
+        emailSpan = document.getElementById('footerEmail')
+        const email = emailSpan.innerText.split(' ')[0];
+        navigator.clipboard.writeText(email);
+        alert('email has been copied to clipboard')
+    }
+
+</script>
 </html>
