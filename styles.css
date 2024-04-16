@@ -76,7 +76,7 @@ header {
 }
 footer {
     height: 10%; 
-
+    padding: 0;
     bottom: 0;
     display: flex;
 }
@@ -89,15 +89,18 @@ footer a {
     width: 50%;
 }
 .footerRight {
+    display: flex;
+    flex-direction: row-reverse;
     text-align: right;
+    align-items: center;
 }
 .footerEmail{
-    margin-right: 2vw;
+    
     transition: transform 1s, font-size 1s;
 }
 .footerRight:hover .footerEmail{
     transform: translateX(-10%);
-    font-size: 17px;
+    font-size: 20px;
 }
 .emailToolTip{
     visibility: hidden;
@@ -110,4 +113,14 @@ footer a {
 }
 .footerEmail:hover .emailToolTip{
     visibility: visible;
+}
+.footerLeft {
+    display: flex;
+    justify-content:flex-start ; /* horizontal */
+    align-items: center; /* vertical */
+}
+.footerLeft img {
+    width: 46px ; 
+    height: 45px;
+    padding-left: 10px;
 }
