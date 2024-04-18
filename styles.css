@@ -11,33 +11,33 @@ header {
     padding: 10px 0;
     box-sizing: border-box; 
 }
-.headerTitle{
+#headerTitle{
     transition: font-size 1s
 }
 
-header:hover .headerTitle{
+header:hover #headerTitle{
     font-size: 20px;
-    transform: translateY(-10%)
+    transform: translateY(-10%);
 }
-.splitContainer {
+#splitContainer {
     display: flex;
     height: 80%; 
     width: 100%; 
 }
-.splitLeft, .splitRight {
+#splitLeft, #splitRight {
     height: 100%;
     width: 50%;
     transition: width 1s ease;
     position: relative;
 }
-.splitLeft {
+#splitLeft {
     background-color: red;
 }
-.splitRight {
+#splitRight {
     background-color: DodgerBlue;
 }
 
-.personalTitle, .projectsTitle {
+#personalTitle, #projectsTitle {
     position:absolute;
     bottom: 50%;
     font-size: 40px;
@@ -46,31 +46,31 @@ header:hover .headerTitle{
     font-weight: bold;
 }
 
-.splitRight:hover .projectsTitle, .splitLeft:hover .personalTitle{
+#splitRight:hover #projectsTitle, #splitLeft:hover #personalTitle{
     font-size: 20px;
     bottom: 90%;
     transition: translate(0,0);
 }
-.projectsLinks {
+#projectsLinks {
     visibility: hidden;
     position:absolute ;
     bottom: 80%;
     
 }
-.splitRight:hover .projectsLinks{
+#splitRight:hover #projectsLinks{
     visibility: visible;
 }
 
-.splitRight:hover, .splitLeft:hover {
+#splitRight:hover, #splitLeft:hover {
     width: 200%;
 }
 
-.aboutMe {
+#aboutMe {
     visibility: hidden;
     position: absolute;
     bottom: 80%;
 }
-.splitLeft:hover .aboutMe {
+#splitLeft:hover #aboutMe {
     visibility: visible;
 }
 header {
@@ -87,47 +87,47 @@ footer {
 footer a {
     color: white;
 }
-.footerLeft, .footerRight {
+#footerLeft, #footerRight {
     width: 50%;
 }
-.footerRight {
+#footerRight {
     display: flex;
     flex-direction: row-reverse;
     text-align: right;
     align-items: center;
 }
-.footerEmail{
+#footerEmail{
     
     transition: transform 1s, font-size 1s;
 }
-.footerRight:hover .footerEmail{
+#footerRight:hover #footerEmail{
     transform: translateX(-10%);
     font-size: 20px;
 }
-.emailToolTip{
+#emailToolTip{
     visibility: hidden;
     position: relative;
     color: white;
 }
-.footerEmail:hover{
+#footerEmail:hover{
     cursor: pointer;
     color: lawnGreen;
 }
-.footerEmail:hover .emailToolTip{
+#footerEmail:hover #emailToolTip{
     visibility: visible;
 }
-.footerLeft {
+#footerLeft {
     display: flex;
     justify-content:flex-start ; /* horizontal */
     align-items: center; /* vertical */
 }
-.footerLeft img {
+#footerLeft img {
     width: 46px ; 
     height: 45px;
     padding-left: 10px;
     transition: width 0.5s;
 }
-.footerLeft:hover img{
+#footerLeft:hover img{
     width: 69px ; 
     height: 67.5px;
 }
