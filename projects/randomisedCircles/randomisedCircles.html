@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomised Circles</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body{
+            margin: 0;
+        }
+        svg{
+            display: block;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <svg></svg>
+<script>
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    const svg = d3.select('svg')
+            .attr('width', width)
+            .attr('height', height);
+
+    const blobs = svg.selectAll('circle')
+                    .data(d3.range(20))
+                    .enter()
+                    .append('circle')
+                    .attr('r', () => Math.random()*100)
+                    .attr('cx', () => Math.random()*width)
+                    .attr('cy', () => Math.random()*height)
+                    .attr('fill',() => '#'+ Math.floor(Math.random()*16777215).toString(16))
+                    
+                    .on('mousedown touchstart', function(){
+                        d3.select(this).classed('paused',true);
+                        d3.select(this).raise();
+                    })
+                    .on('mouseup touchend', function(){
+                        d3.select(this).classed('paused',false);
+                    })
+                    .on('mouseleave', function(){
+                        d3.select(this).classed('paused',false);
+                    })
+
+    /* updates the svg if window size changes */
+    function updateDimensions(){
+        width = window.innerWidth;
+        height = window.innerHeight;
+        svg.attr('width', width)
+            .attr('height', height);
+    }
+    function updateBlobs(){
+        blobs.transition()
+        .duration(2000)
+        .attr('r', function(){
+            if(!d3.select(this).classed('paused')){
+                return Math.random()*100;
+            }else {
+                return d3.select(this).attr('r');
+            }}) 
+        .attr('cx', function(){
+            if(!d3.select(this).classed('paused')){
+                return Math.random()*width
+            }else {
+                return d3.select(this).attr('cx');
+            }})
+        .attr('cy', function(){
+            if(!d3.select(this).classed('paused')){
+                return Math.random()*height
+            }else {
+                return d3.select(this).attr('cy');
+            }})
+        .attr('fill', function(){
+            if(!d3.select(this).classed('paused')){
+                const r = Math.floor(Math.random() * 256);  
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+                return `rgb(${r}, ${g}, ${b})`;
+            }else {
+                return d3.select(this).attr('fill');  /* used rgb as hex method used initially in blobs creation changes the colours during the transition and at the end */
+            }})
+        .on('end', updateBlobs)
+    }
+    
+    window.addEventListener('resize', updateDimensions);
+    updateBlobs(); 
+</script>
+</body>
+</html>

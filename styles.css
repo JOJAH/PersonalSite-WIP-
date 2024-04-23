@@ -67,7 +67,7 @@ header:hover #headerTitle{
 #projectsLinks {
     visibility: hidden;
     position:absolute ;
-    bottom: 80%;
+    top: 10%;
     
 }
 #splitRight:hover #projectsLinks{
