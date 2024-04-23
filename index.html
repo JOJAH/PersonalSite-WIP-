@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Split Page</title>
+<title>Jake's Page</title>
 <link rel="stylesheet" href="styles.css"> 
 
 </head>
@@ -26,7 +26,9 @@
         <div id= "projectsLinks">
             <ul>
                 <li><a href="projects/networkTopology/networkTopology.html">Device Topology</a></li>
-                <li id="listedBuildingLink"><a href="https://listedbuildings.onrender.com/">ListedBuildings</a></li>
+                <li id="listedBuildingLink"><a href="https://listedbuildings.onrender.com/">ListedBuildings</a>
+                    <span id="listedBuildingLinkToolTip">May take a minute to intially load</span>
+                </li>
             </ul>
         </div>
     </div>
@@ -50,6 +52,7 @@
 <script>
     function copyEmail() {
         emailSpan = document.getElementById('footerEmail')
+        toolTip = document.getElementById('emailToolTip')
         const email = emailSpan.innerText.split(' ')[0];
         navigator.clipboard.writeText(email);
         alert('email has been copied to clipboard')

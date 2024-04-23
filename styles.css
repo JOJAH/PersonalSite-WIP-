@@ -4,6 +4,7 @@ body, html {
     height: 100%;
 }
 header {
+    height: 10%;
     background-color: black;
     color: white;
     text-align: center;
@@ -14,7 +15,6 @@ header {
 #headerTitle{
     transition: font-size 1s
 }
-
 header:hover #headerTitle{
     font-size: 20px;
     transform: translateY(-10%);
@@ -33,10 +33,23 @@ header:hover #headerTitle{
 #splitLeft {
     background-color: red;
 }
+#aboutMe {
+    visibility: hidden;
+    position: absolute;
+    bottom: 80%;
+}
+#splitLeft:hover #aboutMe {
+    visibility: visible;
+}
+#listedBuildingLinkToolTip{
+    visibility: hidden;
+}
+#listedBuildingLink:hover #listedBuildingLinkToolTip{
+    visibility: visible;
+}
 #splitRight {
     background-color: DodgerBlue;
 }
-
 #personalTitle, #projectsTitle {
     position:absolute;
     bottom: 50%;
@@ -65,17 +78,6 @@ header:hover #headerTitle{
     width: 200%;
 }
 
-#aboutMe {
-    visibility: hidden;
-    position: absolute;
-    bottom: 80%;
-}
-#splitLeft:hover #aboutMe {
-    visibility: visible;
-}
-header {
-    height: 10%;
-}
 footer {
     height: 10%; 
     padding: 0;
@@ -97,7 +99,6 @@ footer a {
     align-items: center;
 }
 #footerEmail{
-    
     transition: transform 1s, font-size 1s;
 }
 #footerRight:hover #footerEmail{
@@ -128,6 +129,6 @@ footer a {
     transition: width 0.5s;
 }
 #footerLeft:hover img{
-    width: 69px ; 
-    height: 67.5px;
+    width: 62px ; 
+    height: 61px;
 }
