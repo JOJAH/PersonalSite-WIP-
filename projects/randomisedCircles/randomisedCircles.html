@@ -21,6 +21,21 @@
             top: 10px;
             left: 10px;
         }
+        #menuButtonContainer{
+            display: none;
+            position: fixed;
+            bottom: 10px;
+            width: 40px;
+            height: 40px;
+            left: 50%;
+        }
+        .menuButtonBar{
+            width: 35px;
+            height: 5px;
+            background-color: white;
+            margin: 6px 0;
+
+        }
     </style>
 </head>
 <body>
@@ -92,10 +107,28 @@
             }})
         .on('end', updateBlobs)
     }
-    
+
+    document.addEventListener('mousemove', function(){
+        const menuButton = document.getElementById('menuButtonContainer')   
+        if (typeof timer !=="undefined"){
+            clearTimeout(timer);
+        }else{}
+            
+        menuButton.style.display = "inline";
+        timer = setTimeout(()=>{
+            menuButton.style.display = "none";
+        },2000);
+        
+    });
+
     window.addEventListener('resize', updateDimensions);
     updateBlobs(); 
 </script>
 <iframe src="../../assets/backArrow.html" frameborder="0"></iframe>
+<div id="menuButtonContainer">
+    <div class="menuButtonBar"></div>
+    <div class="menuButtonBar"></div>
+    <div class="menuButtonBar"></div>
+</div>
 </body>
 </html>
