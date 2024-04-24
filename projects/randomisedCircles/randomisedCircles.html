@@ -28,6 +28,7 @@
             width: 40px;
             height: 40px;
             left: 50%;
+            cursor: pointer;
         }
         .menuButtonBar{
             width: 35px;
@@ -36,11 +37,17 @@
             margin: 6px 0;
 
         }
+        #menu{
+            position: fixed;
+            width: 100%;
+            height: 0;
+            bottom: 0px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body>
-    <svg>
-    </svg>
+    <svg></svg>
 <script>
     let width = window.innerWidth;
     let height = window.innerHeight;
@@ -107,6 +114,18 @@
             }})
         .on('end', updateBlobs)
     }
+
+    function openMenu(){
+        const menu = document.getElementById('menu');
+        const menuButton = document.getElementById('menuButtonContainer')   
+        if(menu.style.height == '0px'){
+            menu.style.height = '20%';
+            menuButton.style.bottom = '20%';
+        }else{
+            menu.style.height = '0px';
+            menuButton.style.bottom = '10px';
+        }
+    }
     /* menu button appearing and disspearing */
     document.addEventListener('mousemove', function(){
         const menuButton = document.getElementById('menuButtonContainer')   
@@ -127,10 +146,14 @@
 </script>
 
 <iframe src="../../assets/backArrow.html" frameborder="0"></iframe>
-<div id="menuButtonContainer">
+
+<div id="menuButtonContainer" onclick="openMenu()">
     <div class="menuButtonBar"></div>
     <div class="menuButtonBar"></div>
     <div class="menuButtonBar"></div>
 </div>
+
+<div id="menu"></div>
+
 </body>
 </html>
