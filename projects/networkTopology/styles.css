@@ -1,6 +1,11 @@
 html,body {
     height: 100%;
 }
+iframe{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+}
 /* Topology */
 #main{
     transition: margin-left .5s;
@@ -58,5 +63,11 @@ text{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+#openbtn{
+    position: fixed;
+    top: 20px;
+    left: 55px;
 }
 
