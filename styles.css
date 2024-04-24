@@ -70,6 +70,16 @@ header:hover #headerTitle{
     top: 10%;
     
 }
+.projectsHeadings{
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+#uniProjectsHeading{
+    margin-top: 0;
+}
+.projectList{
+    margin-top: 10px;
+}
 #splitRight:hover #projectsLinks{
     visibility: visible;
 }
