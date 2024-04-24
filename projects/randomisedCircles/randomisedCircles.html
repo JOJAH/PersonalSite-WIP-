@@ -39,12 +39,30 @@
 
         }
         #menu{
+            display: flex;
             position: fixed;
             width: 100%;
             height: 0px;
             bottom: 0px;
             background-color: rgba(255, 255, 255, 0.5);
             transition: height 1s;
+            overflow: hidden;
+        }
+        .sliderContainer{
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        #amount{
+            position: absolute;
+            right: 0;
+            bottom: 50%;
+        }
+        #speed{
+            transform: rotate(-90deg);
+            height: 100%;
+            
         }
     </style>
 </head>
@@ -155,7 +173,15 @@
     <div class="menuButtonBar"></div>
 </div>
 
-<div id="menu"></div>
+<div id="menu">
+    <div class="sliderContainer">
+        <input type="range" id="amount">
+    </div>
+    <div  class="sliderContainer">
+        <input type="range" id="speed">
+    </div>
+
+</div>
 
 </body>
 </html>
