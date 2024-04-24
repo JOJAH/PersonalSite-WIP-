@@ -107,7 +107,7 @@
             }})
         .on('end', updateBlobs)
     }
-
+    /* menu button appearing and disspearing */
     document.addEventListener('mousemove', function(){
         const menuButton = document.getElementById('menuButtonContainer')   
         if (typeof timer !=="undefined"){
@@ -120,10 +120,12 @@
         },2000);
         
     });
-
+    /* window resizing*/
     window.addEventListener('resize', updateDimensions);
+    /* initial start the circles moving */
     updateBlobs(); 
 </script>
+
 <iframe src="../../assets/backArrow.html" frameborder="0"></iframe>
 <div id="menuButtonContainer">
     <div class="menuButtonBar"></div>
