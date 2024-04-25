@@ -54,11 +54,18 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            flex-direction: column;
         }
+
         #amount{
             position: absolute;
             right: 0;
             bottom: 50%;
+        }
+        #amountLabel{
+            position: absolute;
+            right: 0;
+            bottom: 40%;
         }
         #speed{
             transform: rotate(-90deg);
@@ -190,10 +197,14 @@
 
 <div id="menu">
     <div class="sliderContainer">
+        <label for="amount" id="amountLabel">Number of Circles: <span id="amountValue">20</span> </label>
         <input type="range" id="amount" min="1" max="30" value="20" oninput="
-            circleNumber = this.value
+            circleNumber = this.value;
+            amountValue = document.getElementById('amountValue');
+            amountValue.textContent = circleNumber
             updateBlobs()
             ">
+        
     </div>
     <div  class="sliderContainer">
         <input type="range" id="speed">
