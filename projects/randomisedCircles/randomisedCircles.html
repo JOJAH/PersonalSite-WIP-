@@ -22,14 +22,15 @@
             left: 10px;
         }
         #menuButtonContainer{
-            display: none;
+            display: inline;
+            opacity: 0;
             position: fixed;
             bottom: 10px;
             width: 40px;
             height: 40px;
             left: 50%;
             cursor: pointer;
-            transition: bottom 1s;
+            transition: bottom 1s, opacity 1s;
         }
         .menuButtonBar{
             width: 35px;
@@ -74,8 +75,12 @@
         #speedLabel{
             position: absolute;
             bottom: 40%;
-            left: 12%;
+            left: 15%;
         }
+        label{
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
@@ -193,11 +198,14 @@
         const menuButton = document.getElementById('menuButtonContainer')   
         if (typeof timer !=="undefined"){
             clearTimeout(timer);
-        }else{}
-            
-        menuButton.style.display = "inline";
+        }else{};
+        
+        menuButton.style.opacity = '1';
+        menuButton.pointerEvents = 'auto';
+        
         timer = setTimeout(()=>{
-            menuButton.style.display = "none";
+            menuButton.style.opacity = '0';
+            menuButton.pointerEvents = 'none';
         },2000);
         
     });
@@ -247,7 +255,7 @@
                 speedValue.textContent = this.value;
                 updateBlobs()
             ">
-        <label id="speedLabel">Duration of movement: <span id="speedValue">3</span> seconds</label>
+        <label id="speedLabel">Speed: <span id="speedValue">3</span> seconds</label>
     </div>
 
 </div>
