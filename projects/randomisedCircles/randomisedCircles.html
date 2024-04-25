@@ -116,7 +116,7 @@
         blobs = svg.selectAll('circle')
             /*update circle number*/
             .data(d3.range(circleNumber));
-            /*removes excess circles*/
+            /*removes excess circles with fade*/
             blobs.exit()
             .transition()
             .duration(2000)
@@ -130,6 +130,7 @@
 
         blobs.transition()
         .duration(circleSpeed)
+        .style('opacity',1)
         .attr('r', function(){
             if(!d3.select(this).classed('paused')){
                 return Math.random()*100;
