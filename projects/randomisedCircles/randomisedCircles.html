@@ -53,6 +53,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            overflow: hidden;
         }
         #amount{
             position: absolute;
@@ -62,7 +63,6 @@
         #speed{
             transform: rotate(-90deg);
             height: 100%;
-            
         }
     </style>
 </head>
@@ -71,12 +71,15 @@
 <script>
     let width = window.innerWidth;
     let height = window.innerHeight;
+
+    let circleNumber = 20
+    let circleSpeed = 2000
     const svg = d3.select('svg')
             .attr('width', width)
             .attr('height', height);
 
-    const blobs = svg.selectAll('circle')
-                    .data(d3.range(20))
+    let blobs = svg.selectAll('circle')
+                    .data(d3.range(circleNumber))
                     .enter()
                     .append('circle')
                     .attr('r', () => Math.random()*100)
@@ -103,8 +106,19 @@
             .attr('height', height);
     }
     function updateBlobs(){
+        blobs = svg.selectAll('circle')
+            /*update circle number*/
+            .data(d3.range(circleNumber));
+            /*removes excess circles*/
+            blobs.exit().remove();
+
+        /* creates new circles */
+        const newBlobs = blobs.enter().append('circle')
+        /*adds newly added to existing*/
+        blobs = newBlobs.merge(blobs)
+
         blobs.transition()
-        .duration(2000)
+        .duration(circleSpeed)
         .attr('r', function(){
             if(!d3.select(this).classed('paused')){
                 return Math.random()*100;
@@ -159,6 +173,7 @@
         },2000);
         
     });
+
     /* window resizing*/
     window.addEventListener('resize', updateDimensions);
     /* initial start the circles moving */
@@ -175,7 +190,10 @@
 
 <div id="menu">
     <div class="sliderContainer">
-        <input type="range" id="amount">
+        <input type="range" id="amount" min="1" max="30" value="20" oninput="
+            circleNumber = this.value
+            updateBlobs()
+            ">
     </div>
     <div  class="sliderContainer">
         <input type="range" id="speed">
