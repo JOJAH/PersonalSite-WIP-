@@ -117,7 +117,11 @@
             /*update circle number*/
             .data(d3.range(circleNumber));
             /*removes excess circles*/
-            blobs.exit().remove();
+            blobs.exit()
+            .transition()
+            .duration(2000)
+            .style('opacity',0)
+            .remove();
 
         /* creates new circles */
         const newBlobs = blobs.enter().append('circle')
@@ -198,7 +202,7 @@
 <div id="menu">
     <div class="sliderContainer">
         <label for="amount" id="amountLabel">Number of Circles: <span id="amountValue">20</span> </label>
-        <input type="range" id="amount" min="1" max="30" value="20" oninput="
+        <input type="range" id="amount" min="1" max="30" value="20" onmouseup="
             circleNumber = this.value;
             amountValue = document.getElementById('amountValue');
             amountValue.textContent = circleNumber
