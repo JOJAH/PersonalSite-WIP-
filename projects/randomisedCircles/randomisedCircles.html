@@ -124,9 +124,19 @@
             .remove();
 
         /* creates new circles */
-        const newBlobs = blobs.enter().append('circle')
+        const newBlobs = blobs.enter().append('circle');
+        newBlobs.on('mousedown touchstart', function(){
+                        d3.select(this).classed('paused',true);
+                        d3.select(this).raise();
+                    })
+                    .on('mouseup touchend', function(){
+                        d3.select(this).classed('paused',false);
+                    })
+                    .on('mouseleave', function(){
+                        d3.select(this).classed('paused',false);
+                    });
         /*adds newly added to existing*/
-        blobs = newBlobs.merge(blobs)
+        blobs = newBlobs.merge(blobs);
 
         blobs.transition()
         .duration(circleSpeed)
@@ -158,6 +168,7 @@
             }else {
                 return d3.select(this).attr('fill');  /* used rgb as hex method used initially in blobs creation changes the colours during the transition and at the end */
             }})
+        
         .on('end', updateBlobs)
     }
 
