@@ -106,6 +106,7 @@
         blobs = svg.selectAll('circle')
             /*update circle number*/
             .data(d3.range(circleNumber));
+
             /*removes excess circles with fade*/
             blobs.exit()
             .transition()
@@ -113,48 +114,27 @@
             .style('opacity',0)
             .remove();
 
-        /* creates new circles */
-        const newBlobs = blobs.enter().append('circle');
-        /* adds touch circle function */
-        newBlobs.on('mousedown touchstart', function(){
-                        d3.select(this).interrupt();
-                    })
-                    
-        /*adds newly added to existing*/
-        blobs = newBlobs.merge(blobs);
-
-        blobs.transition()
-        .duration(circleSpeed)
-        .style('opacity',1)
-        .attr('r', function(){
-            if(!d3.select(this).classed('paused')){
-                return Math.random()*100;
-            }else {
-                return d3.select(this).attr('r');
-            }}) 
-        .attr('cx', function(){
-            if(!d3.select(this).classed('paused')){
-                return Math.random()*width
-            }else {
-                return d3.select(this).attr('cx');
-            }})
-        .attr('cy', function(){
-            if(!d3.select(this).classed('paused')){
-                return Math.random()*height
-            }else {
-                return d3.select(this).attr('cy');
-            }})
-        .attr('fill', function(){
-            if(!d3.select(this).classed('paused')){
-                const r = Math.floor(Math.random() * 256);  
-                const g = Math.floor(Math.random() * 256);
-                const b = Math.floor(Math.random() * 256);
-                return `rgb(${r}, ${g}, ${b})`;
-            }else {
-                return d3.select(this).attr('fill');  /* used rgb as hex method used initially in blobs creation changes the colours during the transition and at the end */
-            }})
+        const newBlobs = blobs.enter().append('circle')
+        .attr('cx', function(){ return Math.random() * width;})
+        .attr('cy', function(){ return Math.random() * height;})
         
-        .on('end', updateBlobs)
+        newBlobs.on('mousedown touchstart', function(){
+            d3.select(this).interrupt();})
+                    
+        blobs.merge(newBlobs)
+            .transition()
+            .duration(circleSpeed)
+            .style('opacity',1)
+            .attr('r', function(){ return Math.random()*100;})      
+            .attr('cx', function(){return Math.random() * width;})
+            .attr('cy', function(){return Math.random() * height;})
+            .attr('fill', function(){
+                    const r = Math.floor(Math.random() * 256);  
+                    const g = Math.floor(Math.random() * 256);
+                    const b = Math.floor(Math.random() * 256);
+                    return `rgb(${r}, ${g}, ${b})`;})
+        
+            .on('end', updateBlobs)
     }
 
     function openMenu(){
@@ -232,8 +212,6 @@
             ">
         <label id="speedLabel">Speed: <span id="speedValue">3</span> seconds</label>
     </div>
-
 </div>
-
 </body>
 </html>
