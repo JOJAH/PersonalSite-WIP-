@@ -95,26 +95,6 @@
             .attr('width', width)
             .attr('height', height);
 
-    let blobs = svg.selectAll('circle')
-                    .data(d3.range(circleNumber))
-                    .enter()
-                    .append('circle')
-                    .attr('r', () => Math.random()*100)
-                    .attr('cx', () => Math.random()*width)
-                    .attr('cy', () => Math.random()*height)
-                    .attr('fill',() => '#'+ Math.floor(Math.random()*16777215).toString(16))
-                    
-                    .on('mousedown touchstart', function(){
-                        d3.select(this).classed('paused',true);
-                        d3.select(this).raise();
-                    })
-                    .on('mouseup touchend', function(){
-                        d3.select(this).classed('paused',false);
-                    })
-                    .on('mouseleave', function(){
-                        d3.select(this).classed('paused',false);
-                    })
-
     /* updates the svg if window size changes */
     function updateDimensions(){
         width = window.innerWidth;
@@ -135,16 +115,11 @@
 
         /* creates new circles */
         const newBlobs = blobs.enter().append('circle');
+        /* adds touch circle function */
         newBlobs.on('mousedown touchstart', function(){
-                        d3.select(this).classed('paused',true);
-                        d3.select(this).raise();
+                        d3.select(this).interrupt();
                     })
-                    .on('mouseup touchend', function(){
-                        d3.select(this).classed('paused',false);
-                    })
-                    .on('mouseleave', function(){
-                        d3.select(this).classed('paused',false);
-                    });
+                    
         /*adds newly added to existing*/
         blobs = newBlobs.merge(blobs);
 
