@@ -65,11 +65,16 @@
         #amountLabel{
             position: absolute;
             right: 0;
-            bottom: 40%;
+            bottom: 35%;
         }
         #speed{
             transform: rotate(-90deg);
             height: 100%;
+        }
+        #speedLabel{
+            position: absolute;
+            bottom: 40%;
+            left: 12%;
         }
     </style>
 </head>
@@ -80,7 +85,7 @@
     let height = window.innerHeight;
 
     let circleNumber = 20
-    let circleSpeed = 2000
+    let circleSpeed = 3000
     const svg = d3.select('svg')
             .attr('width', width)
             .attr('height', height);
@@ -213,7 +218,7 @@
 
 <div id="menu">
     <div class="sliderContainer">
-        <label for="amount" id="amountLabel">Number of Circles: <span id="amountValue">20</span> </label>
+        <label id="amountLabel">Number of Circles: <span id="amountValue">20</span> </label>
         <input type="range" id="amount" min="1" max="30" value="20" onmouseup="
             circleNumber = this.value;
             amountValue = document.getElementById('amountValue');
@@ -221,15 +226,28 @@
             updateBlobs()
             "
         ontouchend=" 
-        circleNumber = this.value;
-        amountValue = document.getElementById('amountValue');
-        amountValue.textContent = circleNumber
-        updateBlobs()
+            circleNumber = this.value;
+            amountValue = document.getElementById('amountValue');
+            amountValue.textContent = circleNumber
+            updateBlobs()
         ">
         
     </div>
     <div  class="sliderContainer">
-        <input type="range" id="speed">
+        
+        <input type="range" id="speed" min="1" max="5" value="3" onmouseup="
+            circleSpeed = this.value * 1000;
+            speedValue = document.getElementById('speedValue');
+            speedValue.textContent = this.value;
+            updateBlobs()
+            "
+            ontouchend="
+                circleSpeed = this.value * 1000;
+                speedValue = document.getElementById('speedValue');
+                speedValue.textContent = this.value;
+                updateBlobs()
+            ">
+        <label id="speedLabel">Duration of movement: <span id="speedValue">3</span> seconds</label>
     </div>
 
 </div>
