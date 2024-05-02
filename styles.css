@@ -68,10 +68,14 @@ header:hover #headerTitle{
     visibility: hidden;
     position: absolute;
     bottom: 80%;
+    transition: opacity 2s;
+    opacity: 0;
 }
 #splitLeft:hover #aboutMe {
+    opacity: 1;
     visibility: visible;
 }
+
 #listedBuildingLinkToolTip{
     visibility: hidden;
 }
@@ -122,6 +126,12 @@ header:hover #headerTitle{
 }
 #uniProjectsHeading{
     margin-top: 0;
+}
+#githubImg{
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    margin-left: 10px;
 }
 .projectList{
     margin-top: 10px;

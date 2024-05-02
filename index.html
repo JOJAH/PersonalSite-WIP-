@@ -26,8 +26,8 @@
         <div id= "projectsLinks">
             <h4 id="uniProjectsHeading" class="projectsHeadings">University</h4>
             <ul class="projectList">
-                <li><a href="projects/networkTopology/networkTopology.html">Device Topology</a></li>
-                <li id="listedBuildingLink"><a href="https://listedbuildings.onrender.com/">Listed Buildings visualisation</a>
+                <li><a href="projects/networkTopology/networkTopology.html">Device Topology</a><a href="https://github.com/JOJAH/PcapReader-NetworkVisualisation"><img id="githubImg" src="assets/githubBlack.png" alt=""></a> </li>
+                <li id="listedBuildingLink"><a href="https://listedbuildings.onrender.com/">Listed Buildings visualisation</a><a href="https://github.com/JOJAH/listedBuildings"><img id="githubImg" src="assets/githubBlack.png" alt=""></a>
                     <span id="listedBuildingLinkToolTip">May take a minute to intially load</span>
                 </li>
             </ul class="projectList">
@@ -35,6 +35,9 @@
             <ul>
                 <li>
                     <a href="projects/randomisedCircles/randomisedCircles.html">Randomised Circles</a>
+                </li>
+                <li>
+                    <a href="https://github.com/JOJAH/personalSiteWIP">This site</a>
                 </li>
 
             </ul>
@@ -64,7 +67,7 @@
         const email = emailSpan.innerText.split(' ')[0];
         navigator.clipboard.writeText(email);
         alert('email has been copied to clipboard')
-    }
+    } 
 
 </script>
 </html>
