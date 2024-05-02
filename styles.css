@@ -68,11 +68,12 @@ header:hover #headerTitle{
     visibility: hidden;
     position: absolute;
     bottom: 80%;
-    transition: opacity 2s;
+    transition: opacity 0s;
     opacity: 0;
 }
 #splitLeft:hover #aboutMe {
     opacity: 1;
+    transition: opacity 2s;
     visibility: visible;
 }
 
