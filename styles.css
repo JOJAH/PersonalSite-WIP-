@@ -31,23 +31,25 @@ header:hover #headerTitle{
     width: 50%;
     transition: opacity 1s , width 1s ease;
     position: relative;
+    overflow: hidden;
 }
 #splitLeft {
 
     color: white;
-/* background from: https://codepen.io/t_afif/pen/eYKXvEP */
---s: 70px; /* control the size */
---c: #6B5344;
-
---_l: #0000 46%,var(--c) 47% 53%,#0000 54%;
+/* background from: https://codepen.io/t_afif/pen/YzaoqVV */
+--s: 60px; /* control the size */
+  
+--_g: #0000 83%,#b09f79 85% 99%,#0000 101%;
 background:
-  radial-gradient(100% 100% at 100% 100%,var(--_l)) var(--s) var(--s),
-  radial-gradient(100% 100% at 0    0   ,var(--_l)) var(--s) var(--s),
-  radial-gradient(100% 100%,#0000 22%,var(--c) 23% 29%, #0000 30% 34%,var(--c) 35% 41%,#0000 42%)
-  #F8ECC9;
-background-size: calc(var(--s)*2) calc(var(--s)*2);
-    
+  radial-gradient(27% 29% at right ,var(--_g)) calc(var(--s)/ 2) var(--s),
+  radial-gradient(27% 29% at left  ,var(--_g)) calc(var(--s)/-2) var(--s),
+  radial-gradient(29% 27% at top   ,var(--_g)) 0 calc(var(--s)/ 2),
+  radial-gradient(29% 27% at bottom,var(--_g)) 0 calc(var(--s)/-2)
+  #476074;
+background-size: calc(2*var(--s)) calc(2*var(--s));
 }
+    
+
 
 #aboutMe {
     visibility: hidden;
@@ -84,21 +86,23 @@ background-size: calc(var(--s)*2) calc(var(--s)*2);
 }
 
 #splitRight {
-/* background from: https://codepen.io/t_afif/pen/abYweKP */
-    --s: 82px; /* control the size */
-    --c1: #b2b2b2;
-    --c2: #ffffff;
-    --c3: #d9d9d9;
-    
-    --_g: var(--c3) 0 120deg,#0000 0;
-    background:
-      conic-gradient(from -60deg at 50% calc(100%/3),var(--_g)),
-      conic-gradient(from 120deg at 50% calc(200%/3),var(--_g)),
-      conic-gradient(from  60deg at calc(200%/3),var(--c3) 60deg,var(--c2) 0 120deg,#0000 0),
-      conic-gradient(from 180deg at calc(100%/3),var(--c1) 60deg,var(--_g)),
-      linear-gradient(90deg,var(--c1)   calc(100%/6),var(--c2) 0 50%,
-                            var(--c1) 0 calc(500%/6),var(--c2) 0);
-    background-size: calc(1.732*var(--s)) var(--s);
+/* background from: https://codepen.io/finnhvman/pen/OJNjqwL */
+     background:
+    43.3px 50px/86.6px 150px radial-gradient(1% 66% at 0 100%, tan 99%, transparent 0),
+    43.3px 100px/86.6px 150px radial-gradient(1% 66% at 100% 0, tan 99%, transparent 0),
+    0 25px/86.6px 150px radial-gradient(1% 66% at 100% 0, tan 99%, transparent 0),
+    0 125px/86.6px 150px radial-gradient(1% 66% at 0 100%, tan 99%, transparent 0),
+    0 100px/86.6px 150px linear-gradient(30deg, white 2.5%, tan 0 7.5%, white 0 12%, tan 0 13%, transparent 0),
+    0 125px/86.6px 150px linear-gradient(30deg, white 5%, tan 0 10%, white 0 12.5%, transparent 0),
+    43.3px 100px/86.6px 150px linear-gradient(210deg, white 5%, tan 0 10%, white 0 12.5%, transparent 0),
+    43.3px 125px/86.6px 150px linear-gradient(210deg, white 2.5%, tan 0 7.5%, white 0 12%, tan 0 13%, transparent 0),
+    43.3px 25px/86.6px 150px linear-gradient(30deg, white 2.5%, tan 0 7.5%, white 0 12%, tan 0 13%, transparent 0),
+    43.3px 50px/86.6px 150px linear-gradient(30deg, white 5%, tan 0 10%, white 0 12.5%, transparent 0),
+    0 25px/86.6px 150px linear-gradient(210deg, white 5%, tan 0 10%, white 0 12.5%, transparent 0),
+    0 50px/86.6px 150px linear-gradient(210deg, white 2.5%, tan 0 7.5%, white 0 12%, tan 0 13%, transparent 0),
+    43.3px 75px/86.6px 150px linear-gradient(150deg, transparent 37%, tan 0 38%, white 0 42.5%, tan 0 47.5%, white 0 52.5%, tan 0 57.5%, white 0 62%, tan 0 63%, transparent 0),
+    0 0/86.6px 150px linear-gradient(150deg, transparent 37%,tan 0 38%, white 0 42.5%, tan 0 47.5%, white 0 52.5%, tan 0 57.5%, white 0 62%, tan 0 63%, transparent 0),
+    0 0/86.6px 150px linear-gradient(90deg, tan 1%, white 0 10%, tan 0 20%, white 0 30%, tan 0 40%, white 0 49%, tan 0 51%, white 0 60%, tan 0 70%, white 0 80%, tan 0 90%, white 0 99%, tan 0);
 }
 #rightBack{
     height: 90% ;
