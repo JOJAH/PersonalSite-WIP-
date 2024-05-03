@@ -65,7 +65,7 @@ header:hover #headerTitle{
 }
 
 #aboutMe {
-    display: none;
+    visibility: hidden;
     position: absolute;
     bottom: 75%;
     transition: opacity 0s;
@@ -75,27 +75,27 @@ header:hover #headerTitle{
 #splitLeft:hover #aboutMe {
     opacity: 1;
     transition: opacity 2s;
-    display: inline;
+    visibility: visible;
 }
 
 #topologyLinkToolTip{
-    display: none;
+    visibility: hidden;
 }
 #topologyLink:hover #topologyLinkToolTip{
-    display: inline;
+    visibility: visible;
 }
 
 #listedBuildingLinkToolTip{
-    display: none;
+    visibility: hidden;
 }
 #listedBuildingLink:hover #listedBuildingLinkToolTip{
-    display: inline;
+    visibility: visible;
 }
 #randomisedCirclesLinkToolTip{
-    display: none;
+    visibility: hidden;
 }
 #randomisedCirclesLink:hover #randomisedCirclesLinkToolTip{
-    display: inline;
+    visibility: visible;
 }
 
 #splitRight {
@@ -131,7 +131,7 @@ header:hover #headerTitle{
     transition: translate(0,0);
 }
 #projectsLinks {
-    display: none;
+    visibility: hidden;
     position:absolute ;
     top: 10%;
     
@@ -161,7 +161,7 @@ header:hover #headerTitle{
     margin-top: 10px;
 }
 #splitRight:hover #projectsLinks{
-    display: inline;
+    visibility: visible;
 }
 
 #splitRight:hover, #splitLeft:hover {
@@ -196,7 +196,7 @@ footer a {
     font-size: 20px;
 }
 #emailToolTip{
-    display: none;
+    visibility: hidden;
     position: relative;
     color: white;
 }
@@ -205,7 +205,7 @@ footer a {
     color: lawnGreen;
 }
 #footerEmail:hover #emailToolTip{
-    display: inline;
+    visibility: visible;
 }
 #footerLeft {
     display: flex;
