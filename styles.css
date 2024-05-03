@@ -67,9 +67,10 @@ header:hover #headerTitle{
 #aboutMe {
     visibility: hidden;
     position: absolute;
-    bottom: 80%;
+    bottom: 75%;
     transition: opacity 0s;
     opacity: 0;
+    margin-left: 1%;
 }
 #splitLeft:hover #aboutMe {
     opacity: 1;
@@ -149,6 +150,14 @@ header:hover #headerTitle{
     margin-left: 10px;
 }
 .projectList{
+    list-style-type: none;
+}
+.projectList li::before{
+    content:'-';
+    margin-right: 5px;
+}
+
+#uniProjectList{
     margin-top: 10px;
 }
 #splitRight:hover #projectsLinks{
