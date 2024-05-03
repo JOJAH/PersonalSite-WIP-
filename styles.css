@@ -34,8 +34,7 @@ header:hover #headerTitle{
     overflow: hidden;
 }
 #splitLeft {
-
-    color: white;
+    color: OrangeRed;
 /* background from: https://codepen.io/t_afif/pen/YzaoqVV */
 --s: 60px; /* control the size */
   
@@ -86,6 +85,7 @@ background-size: calc(2*var(--s)) calc(2*var(--s));
 }
 
 #splitRight {
+    color: rgb(91, 78, 177);
 /* background from: https://codepen.io/finnhvman/pen/OJNjqwL */
      background:
     43.3px 50px/86.6px 150px radial-gradient(1% 66% at 0 100%, tan 99%, transparent 0),
@@ -105,11 +105,13 @@ background-size: calc(2*var(--s)) calc(2*var(--s));
     0 0/86.6px 150px linear-gradient(90deg, tan 1%, white 0 10%, tan 0 20%, white 0 30%, tan 0 40%, white 0 49%, tan 0 51%, white 0 60%, tan 0 70%, white 0 80%, tan 0 90%, white 0 99%, tan 0);
 }
 #rightBack{
+    border-radius: 15px;
     height: 90% ;
     width: 90%;
     box-sizing: border-box;
     margin:5vh;
-    background-color:rgba(178, 186, 187, 0.6);
+    margin-top: 4%;
+    background-color:rgba(210, 180, 140, 0.6);
     opacity: 0;
     transition: opacity 0s;
 }
