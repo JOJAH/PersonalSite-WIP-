@@ -77,12 +77,26 @@ header:hover #headerTitle{
     visibility: visible;
 }
 
+#topologyLinkToolTip{
+    visibility: hidden;
+}
+#topologyLink:hover #topologyLinkToolTip{
+    visibility: visible;
+}
+
 #listedBuildingLinkToolTip{
     visibility: hidden;
 }
 #listedBuildingLink:hover #listedBuildingLinkToolTip{
     visibility: visible;
 }
+#randomisedCirclesLinkToolTip{
+    visibility: hidden;
+}
+#randomisedCirclesLink:hover #randomisedCirclesLinkToolTip{
+    visibility: visible;
+}
+
 #splitRight {
 /* background from: https://codepen.io/t_afif/pen/abYweKP */
     --s: 82px; /* control the size */

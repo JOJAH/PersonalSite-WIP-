@@ -160,7 +160,7 @@
                 const b = Math.floor(Math.random() * 256);
                 return `rgb(${r}, ${g}, ${b})`;
             }else {
-                return d3.select(this).attr('fill');  /* used rgb as hex method used initially in blobs creation changes the colours during the transition and at the end */
+                return d3.select(this).attr('fill');
             }})
         
         .on('end', updateBlobs)
