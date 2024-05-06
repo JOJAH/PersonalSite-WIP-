@@ -87,7 +87,7 @@ header:hover #headerTitle{
 }
 
 #splitRight {
-    color: rgb(91, 78, 177);
+    color: DarkMagenta;
 /* background from: https://codepen.io/finnhvman/pen/OJNjqwL */
      background:
     43.3px 50px/86.6px 150px radial-gradient(1% 66% at 0 100%, tan 99%, transparent 0),
@@ -108,15 +108,14 @@ header:hover #headerTitle{
 }
 #rightBack{
     position: absolute;
-    border-radius: 15px;
-    height: 90% ;
+    border-top-left-radius:15px;
+    height: 110% ;
     width: 90%;
     margin-top: 7vh;
     margin-left: 4vh;
     box-sizing: border-box;
-    
-    background-color:rgba(210, 180, 140, 0.6);
 
+    background: linear-gradient(to bottom, rgba(210, 180, 140, 0.9)0%,rgba(210, 180, 140, 0)100%);
     opacity: 0;
     transition: opacity 0s;
 }
@@ -128,7 +127,7 @@ header:hover #headerTitle{
 #personalTitle, #projectsTitle {
     position:absolute;
     bottom: 50%;
-    font-size: 40px;
+    font-size: 45px;
     transform: translate(0, 50%);
     transition: font-size 1s, bottom 1s;
     font-weight: bolder;
@@ -136,7 +135,7 @@ header:hover #headerTitle{
 }
 
 #splitRight:hover #projectsTitle, #splitLeft:hover #personalTitle{
-    font-size: 20px;
+    font-size: 25px;
     bottom: 90%;
     transition: translate(0,0);
 }
