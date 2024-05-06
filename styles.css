@@ -107,21 +107,20 @@ header:hover #headerTitle{
     0 0/86.6px 150px linear-gradient(90deg, tan 1%, white 0 10%, tan 0 20%, white 0 30%, tan 0 40%, white 0 49%, tan 0 51%, white 0 60%, tan 0 70%, white 0 80%, tan 0 90%, white 0 99%, tan 0);
 }
 #rightBack{
+    position: absolute;
     border-radius: 15px;
     height: 90% ;
     width: 90%;
+    margin-top: 7vh;
+    margin-left: 4vh;
     box-sizing: border-box;
-    margin:5vh;
-    margin-top: 4.5%;
+    
     background-color:rgba(210, 180, 140, 0.6);
+
     opacity: 0;
     transition: opacity 0s;
 }
-@media screen and (max-width:767px){
-    #rightBack{
-        margin-top: 6%;
-    }
-}
+
 #splitRight:hover #rightBack{
     opacity: 1;
     transition: opacity 1s;
@@ -144,7 +143,7 @@ header:hover #headerTitle{
 #projectsLinks {
     visibility: hidden;
     position:absolute ;
-    top: 10%;
+    top: 1vh;
     opacity: 0;
     transition: opacity 0s;
     
