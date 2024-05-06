@@ -112,10 +112,15 @@ header:hover #headerTitle{
     width: 90%;
     box-sizing: border-box;
     margin:5vh;
-    margin-top: 4%;
+    margin-top: 4.5%;
     background-color:rgba(210, 180, 140, 0.6);
     opacity: 0;
     transition: opacity 0s;
+}
+@media screen and (max-width:767px){
+    #rightBack{
+        margin-top: 6%;
+    }
 }
 #splitRight:hover #rightBack{
     opacity: 1;
