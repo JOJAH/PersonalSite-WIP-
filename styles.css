@@ -108,9 +108,9 @@ header:hover #headerTitle{
 }
 #rightBack{
     position: absolute;
-    border-top-left-radius:15px;
-    height: 90% ;
-    width: 90%;
+    border-radius:15px;
+    height: 70% ;
+    width: 80%;
     margin-top: 7vh;
     margin-left: 4vh;
     box-sizing: border-box;
