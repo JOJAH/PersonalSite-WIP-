@@ -109,13 +109,13 @@ header:hover #headerTitle{
 #rightBack{
     position: absolute;
     border-radius:15px;
-    height: 70% ;
+    height: 90% ;
     width: 80%;
     margin-top: 7vh;
     margin-left: 4vh;
     box-sizing: border-box;
     
-    background: linear-gradient(to bottom, rgba(210, 180, 140, 0.9)0%,rgba(210, 180, 140, 0)100%);
+    background: linear-gradient(to bottom, rgba(210, 180, 140, 0.9)0%,rgba(210, 180, 140, 0)140%);
     
     opacity: 0;
     transition: opacity 0s;
@@ -169,7 +169,9 @@ header:hover #headerTitle{
     content:'-';
     margin-right: 5px;
 }
-
+#rightBack ul{
+    padding-left: 1vh;
+}
 #uniProjectList{
     margin-top: 10px;
 }
