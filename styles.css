@@ -27,6 +27,7 @@ header:hover #headerTitle{
     width: 100%; 
 }
 #splitLeft, #splitRight {
+    pointer-events: none;
     height: 100%;
     width: 50%;
     transition: opacity 1s , width 1s ease;
