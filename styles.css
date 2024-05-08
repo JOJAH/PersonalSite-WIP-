@@ -50,21 +50,45 @@ header:hover #headerTitle{
   background-size: var(--s) var(--s);
 }
     
+#leftBackTop{
+    background: rgba(0, 0, 255, 0.6);
+    height: 100px;
+    position: relative;
+    width: 0%;
+    color:white;
 
+    margin-top: 7vh;
 
-#aboutMe {
-    visibility: hidden;
-    position: absolute;
-    bottom: 75%;
     transition: opacity 0s;
     opacity: 0;
-    margin-left: 1%;
+    visibility: hidden;
 }
-#splitLeft:hover #aboutMe {
+
+#leftBackTop::before {
+    background: blue none repeat scroll 0 0;
+    content: "";
+    height: 100px;
+    position: absolute;
+    right: -25px;
+    transform: skew(-20deg);
+    width: 50px;
+}
+#splitLeft:hover #leftBackTop {
     opacity: 1;
-    transition: opacity 1s;
+    width: 75%;
+    transition: opacity 2s, width 1s;
     visibility: visible;
 }
+
+#aboutMe {
+    
+    bottom: 10%;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+}
+
+
 .projectToolTips{
     visibility: hidden;
     opacity: 0;
