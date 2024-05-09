@@ -49,43 +49,92 @@ header:hover #headerTitle{
     var(--c1);
   background-size: var(--s) var(--s);
 }
-    
+
 #leftBackTop{
     background: rgba(0, 0, 255, 0.6);
-    height: 100px;
+    height: 120px;
     position: relative;
     width: 0%;
     color:white;
 
-    margin-top: 7vh;
+    margin-top: 10vh;
 
     transition: opacity 0s;
     opacity: 0;
     visibility: hidden;
 }
-
 #leftBackTop::before {
     background: blue none repeat scroll 0 0;
     content: "";
-    height: 100px;
+    height: 120px;
     position: absolute;
     right: -25px;
     transform: skew(-20deg);
     width: 50px;
 }
-#splitLeft:hover #leftBackTop {
+#splitLeft:hover #leftBackTop{
     opacity: 1;
     width: 75%;
     transition: opacity 2s, width 1s;
     visibility: visible;
 }
 
-#aboutMe {
+#leftBackBottom{
+    background: rgba(0, 0, 255, 0.6);
+    height: 120px;
+    position: absolute;
+    width: 0%;
+    color:white;
+    bottom: 7vh;
+    right: 0;
+    border-bottom-left-radius: 80px 80px;
+
+    transition: opacity 0s;
+    opacity: 0;
+    visibility: hidden;
+}
+#leftBackBottom::before{
+    background: blue none repeat scroll 0 0;
+    content: "";
+    height: 120px;
+    position: absolute;
     
+    left: auto;
+    transform: skew(20deg);
+    width: 50px;
+    
+}
+
+#splitLeft:hover #leftBackBottom {
+    opacity: 1;
+    width: 50%;
+    transition: opacity 2s, width 1s;
+    visibility: visible;
+}
+
+
+#aboutMe { 
     bottom: 10%;
     left: 10%;
     width: 80%;
+
+    display: flex;
     text-align: center;
+    justify-content:center;
+    height: 120px;
+
+}
+#cvLink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+#cvLink a{
+    color: white;
+}
+#cvLink a:hover{
+    color: magenta;
 }
 
 
@@ -132,7 +181,7 @@ header:hover #headerTitle{
 }
 #rightBack{
     position: absolute;
-    border-radius:15px;
+    border-radius:5px;
     height: 90% ;
     width: 80%;
     margin-top: 7vh;
@@ -147,7 +196,7 @@ header:hover #headerTitle{
 
 #splitRight:hover #rightBack{
     opacity: 1;
-    transition: opacity 1s;
+    transition: opacity 1s
 }
 
 #personalTitle, #projectsTitle {
