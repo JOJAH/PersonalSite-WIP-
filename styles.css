@@ -10,7 +10,6 @@ header {
     background-color: black;
     color: white;
     text-align: center;
-    justify-content: center;
     padding: 10px 0;
     box-sizing: border-box; 
 }
@@ -44,7 +43,7 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
 #leftBackTop{
     background: rgba(128, 0, 128, 0.6);
     max-height: 160px;
-    min-height: 100px;
+    min-height: 120px;
     position: relative;
     width: 0%;
 
@@ -56,12 +55,13 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
 
     transition: opacity 0s;
     opacity: 0;
-    visibility: hidden;
+    display: none;
 
     display: flex;
     align-items: center;
     text-align: center;
     justify-content:center;
+
 }
 #leftBackTop::before {
     background: rgb(128, 0, 128) none repeat scroll 0 0;
@@ -76,7 +76,7 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
     opacity: 1;
     width: 75%;
     transition: opacity 2s, width 1s;
-    visibility: visible;
+    display:flex;
 }
 
 #leftBackBottom{
@@ -88,6 +88,7 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
     bottom: 7vh;
     right: 0;
     border-top-left-radius: 80px 80px;
+    
 
     transition: opacity 0s;
     opacity: 0;
@@ -117,10 +118,16 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
     bottom: 10%;
     left: 10%;
     width: 80%;
-    font-size:15px;
+    font-size:20px;
     margin-right: 5vh;
     
     height: 100%;
+
+}
+@media screen and (max-width: 710px) {
+    #aboutMe{
+        font-size:15px;
+    }
 
 }
 
@@ -129,6 +136,7 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
     justify-content: center;
     align-items: center;
     height: 120px;
+    margin-left: 5vh ;
 }
 #cvLink a{
     color: #E95C20FF;
@@ -168,6 +176,7 @@ background-image:  linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transp
 background-size: 80px 140px;
 background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }
+
 #rightBack{
     position: absolute;
     border-radius:5px;
@@ -181,11 +190,13 @@ background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
     
     opacity: 0;
     transition: opacity 0s;
+    pointer-events: none;
 }
 
 #splitRight:hover #rightBack{
     opacity: 1;
-    transition: opacity 1s
+    transition: opacity 1s;
+
 }
 
 #personalTitle, #projectsTitle {

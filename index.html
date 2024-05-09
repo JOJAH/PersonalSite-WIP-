@@ -85,12 +85,21 @@
 </body>
 <script>
     function copyEmail() {
-        emailSpan = document.getElementById('footerEmail')
-        toolTip = document.getElementById('emailToolTip')
+        emailSpan = document.getElementById('footerEmail');
+        toolTip = document.getElementById('emailToolTip');
         const email = emailSpan.innerText.split(' ')[0];
         navigator.clipboard.writeText(email);
-        alert('email has been copied to clipboard')
+        alert('email has been copied to clipboard');
     } 
+    /* stop links from being clickable */
+    splitRight = document.getElementById('splitRight');
+    rightBack = document.getElementById('rightBack');
 
+    splitRight.addEventListener('click', function(){
+        setTimeout(function(){rightBack.style.pointerEvents ='auto', 2000;});
+    });
+    splitRight.addEventListener('mouseleave', function(){
+        rightBack.style.pointerEvents = 'none';
+    });
 </script>
 </html>
