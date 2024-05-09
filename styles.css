@@ -34,11 +34,11 @@ header:hover #headerTitle{
     overflow: hidden;
 }
 #splitLeft {
-    color: OrangeRed;
+    color: #E95C20FF;
 /* background from: https://codepen.io/t_afif/pen/vYrrjoE */
 --s: 100px; /* control the size */
-  --c1: #088F8F;
-  --c2: #355C7D;
+  --c1: #006747FF;
+  --c2: #4F2C1DFF;
   
   --_g: 
      var(--c2) 6%  14%,var(--c1) 16% 24%,var(--c2) 26% 34%,var(--c1) 36% 44%,
@@ -51,11 +51,11 @@ header:hover #headerTitle{
 }
 
 #leftBackTop{
-    background: rgba(0, 0, 255, 0.6);
+    background: rgba(128, 0, 128, 0.6);
     height: 120px;
     position: relative;
     width: 0%;
-    color:white;
+
 
     margin-top: 10vh;
 
@@ -64,7 +64,7 @@ header:hover #headerTitle{
     visibility: hidden;
 }
 #leftBackTop::before {
-    background: blue none repeat scroll 0 0;
+    background: rgb(128, 0, 128) none repeat scroll 0 0;
     content: "";
     height: 120px;
     position: absolute;
@@ -80,27 +80,27 @@ header:hover #headerTitle{
 }
 
 #leftBackBottom{
-    background: rgba(0, 0, 255, 0.6);
+    background: rgba(128, 0, 128, 0.6);
     height: 120px;
     position: absolute;
     width: 0%;
     color:white;
     bottom: 7vh;
     right: 0;
-    border-bottom-left-radius: 80px 80px;
+    border-top-left-radius: 80px 80px;
 
     transition: opacity 0s;
     opacity: 0;
     visibility: hidden;
 }
 #leftBackBottom::before{
-    background: blue none repeat scroll 0 0;
+    background: rgb(128, 0, 128) none repeat scroll 0 0;
     content: "";
     height: 120px;
     position: absolute;
     
     left: auto;
-    transform: skew(20deg);
+    transform: skew(160deg);
     width: 50px;
     
 }
@@ -131,7 +131,7 @@ header:hover #headerTitle{
     height: 120px;
 }
 #cvLink a{
-    color: white;
+    color: #E95C20FF;
 }
 #cvLink a:hover{
     color: magenta;
@@ -160,7 +160,8 @@ header:hover #headerTitle{
 }
 
 #splitRight {
-    color: darkmagenta ;
+    color: MediumSeaGreen ;
+    
 /* background from: https://codepen.io/finnhvman/pen/OJNjqwL */
      background:
     43.3px 50px/86.6px 150px radial-gradient(1% 66% at 0 100%, tan 99%, transparent 0),
@@ -208,9 +209,13 @@ header:hover #headerTitle{
     font-weight: bolder;
     margin-left: 5px;
 }
+#projectsTitle {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
 
 #splitRight:hover #projectsTitle, #splitLeft:hover #personalTitle{
-    font-size: 25px;
+    font-size: 30px;
     bottom: 90%;
     transition: translate(0,0);
 }
