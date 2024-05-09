@@ -34,7 +34,7 @@ header:hover #headerTitle{
     overflow: hidden;
 }
 #splitLeft {
-    color: #E95C20FF;
+    color: cornflowerblue;
 /* background from: https://codepen.io/t_afif/pen/vYrrjoE */
 background-color: #f3f63f;
 opacity: 1;
@@ -43,7 +43,7 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
 
 #leftBackTop{
     background: rgba(128, 0, 128, 0.6);
-    height: 120px;
+    height: 130px;
     position: relative;
     width: 0%;
 
@@ -57,7 +57,7 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
 #leftBackTop::before {
     background: rgb(128, 0, 128) none repeat scroll 0 0;
     content: "";
-    height: 120px;
+    height: 130px;
     position: absolute;
     right: -25px;
     transform: skew(-20deg);
@@ -66,7 +66,7 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
 #splitLeft:hover #leftBackTop{
     opacity: 1;
     width: 75%;
-    transition: opacity 2s, width 1s;
+    transition: opacity 2s, width 1.5s;
     visibility: visible;
 }
 
@@ -99,7 +99,7 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
 #splitLeft:hover #leftBackBottom {
     opacity: 1;
     width: 50%;
-    transition: opacity 2s, width 1s;
+    transition: opacity 2s, width 1.5s;
     visibility: visible;
 }
 
@@ -108,13 +108,16 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
     bottom: 10%;
     left: 10%;
     width: 80%;
+    font-size:15px;
 
     display: flex;
     text-align: center;
     justify-content:center;
     height: 120px;
+    margin-left: 1vh;
 
 }
+
 #cvLink{
     display: flex;
     justify-content: center;
