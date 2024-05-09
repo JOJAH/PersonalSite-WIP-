@@ -43,7 +43,7 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
 
 #leftBackTop{
     background: rgba(128, 0, 128, 0.6);
-    max-height: 150px;
+    max-height: 160px;
     min-height: 100px;
     position: relative;
     width: 0%;
