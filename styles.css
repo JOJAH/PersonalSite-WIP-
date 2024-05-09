@@ -48,6 +48,9 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
     position: relative;
     width: 0%;
 
+    border-bottom-right-radius: 50px 50px ;
+    
+    border-right: 10px solid rgba(128, 0, 128, 0.1);
 
     margin-top: 10vh;
 
