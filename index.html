@@ -28,43 +28,66 @@
                 <a  href="">Open CV</a>
             </div>
         </div>
-        
     </div>
 
     <div id="splitRight">
         <p id="projectsTitle">Projects</p>
-        <div id="rightBack">
-            
-            <div id= "projectsLinks">
-                <h4 id="uniProjectsHeading" class="projectsHeadings">University</h4>
-                <ul id="uniProjectList" class="projectList">
-                    <li class="project" id="topologyLink"><a href="projects/networkTopology/networkTopology.html">Device Topology</a>
-                        <span id="topologyLinkToolTip" class="projectToolTips">
-                        <a href="https://github.com/JOJAH/PcapReader-NetworkVisualisation"><img id="githubImg" src="assets/githubBlack.png" alt=""></a> 
-                        </span>
-                    </li>
-                    <li class="project" id="listedBuildingLink"><a href="https://listedbuildings.onrender.com/">Listed Buildings visualisation</a>
-                        <span id="listedBuildingLinkToolTip" class="projectToolTips">
-                            <a href="https://github.com/JOJAH/listedBuildings"><img id="githubImg" src="assets/githubBlack.png" alt=""></a>
-                                May take a minute to intially load</span>
-                    </li>
-                </ul>
-                <h4 class="projectsHeadings">Personal</h4>
-                <ul class="projectList">
-                    <li class="project" id="randomisedCirclesLink"><a href="projects/randomisedCircles/randomisedCircles.html">Randomised Circles</a>
-                        <span id="randomisedCirclesLinkToolTip" class="projectToolTips">
-                            <a href="https://github.com/JOJAH/radomisedCircles"><img id="githubImg" src="assets/githubBlack.png" alt=""></a>
-                        </span>
-                        
-                    </li>
-                    <li class="project">
-                        <a href="https://github.com/JOJAH/personalSiteWIP">This site's github</a>
-                    </li>
+        <section id="rightFlexWrapper">
 
-                </ul>
-           
+            <div class="rightBox">
+                <div class="angledBoxLeft" id="networkVisualisation">
+                    <span class="projectLinks" id="topologyLink">
+                        <a href="projects/networkTopology/networkTopology.html">Device Topology</a>
+                        <br>
+                        <a href="https://github.com/JOJAH/PcapReader-NetworkVisualisation"><img id="githubImg" src="assets/githubBlack.png" alt=""></a> 
+                    </span>
+                    <span id="topologyLinkToolTip" class="toolTips">
+                        
+                        <p>This project was the end result of my dissertation, project. It is a visualisation of some network traffic data.
+                            You can apply various filters to display different information, and clicking on a node or connection will show you further information regarding that element.
+                            This project also included a pcap reader and anayliser, which passes the information into this visualisation, that pcap reader/analyser can be found within the github repo.
+                        </p>
+                    </span>
+                </div>
             </div>
-         </div>
+            <div class="rightBox"></div>
+
+            <div class="rightBox"></div>
+            <div class="rightBox">
+                <div class="angledBoxRight" id="randomisedCircles"></div>
+            </div>
+
+            <div class="rightBox">
+                <div class="angledBoxLeft" id="listedBuildings">
+                    <span class="projectLinks" id="listedBuildingLink">       
+                        <a href="https://listedbuildings.onrender.com/">Listed Buildings</a>
+                        <br>
+                        <a href="https://github.com/JOJAH/listedBuildings"><img id="githubImg" src="assets/githubBlack.png" alt=""></a>
+                    </span>
+                    <span id="listedBuildingLinkToolTip" class="toolTips">
+                        
+                            May take a minute to intially load</span>
+                
+                </div>
+            </div>
+            <div class="rightBox"></div>
+
+            <div class="rightBox"></div>
+            <div class="rightBox">
+                <div class="angledBoxRight" id="thisSite"></div>
+            </div>
+
+            <div class="rightBox">
+                <div class="angledBoxLeft" id="networkVisualisation">
+
+                </div>
+            </div>
+            <div class="rightBox"></div>
+            
+            <div class="rightBox"></div>
+            <div class="rightBox"></div>
+            
+        </section>
     </div>
 </div>
 
@@ -91,15 +114,45 @@
         navigator.clipboard.writeText(email);
         alert('email has been copied to clipboard');
     } 
-    /* stop links from being clickable */
+    /* stop links in splitRight from being clickable */
     splitRight = document.getElementById('splitRight');
-    rightBack = document.getElementById('rightBack');
+    rightBack = document.getElementById('rightFlexWrapper');
 
-    splitRight.addEventListener('click', function(){
+    splitRight.addEventListener('mouseenter', function(){
         setTimeout(function(){rightBack.style.pointerEvents ='auto', 2000;});
     });
     splitRight.addEventListener('mouseleave', function(){
         rightBack.style.pointerEvents = 'none';
     });
+
+
+    /* Moving the angled boxes in splitRight when the one above is hovered on */
+
+    function angledBoxMovement(angledBox){
+        angledBox.forEach((box, index)=>{
+            box.addEventListener('mouseenter', ()=>{
+                for(let i =index;i<=angledBox.length;i++){
+                    angledBox[i].style.width = '40%'
+                    try{
+                        angledBox[i+1].style.transform = 'translateY(180%)';
+                    }finally{}
+                }
+            });
+            box.addEventListener('mouseleave', ()=>{
+                for(let i =index;i<=angledBox.length;i++){
+                    angledBox[i].style.width = '30%'
+                    try{
+                        angledBox[i+1].style.transform = 'translateY(0%)';;
+                    }finally{}
+                }
+            });
+        });
+    }
+
+    const angledLeft = document.querySelectorAll('.angledBoxLeft');
+    const angledRight = document.querySelectorAll('.angledBoxRight');
+    angledBoxMovement(angledLeft);
+    angledBoxMovement(angledRight);
+
 </script>
 </html>

@@ -34,10 +34,9 @@ header:hover #headerTitle{
 }
 #splitLeft {
     color: cornflowerblue;
-/* background from: https://codepen.io/t_afif/pen/vYrrjoE */
-background-color: #f3f63f;
-opacity: 1;
-background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f63f 40px ), repeating-linear-gradient( #f43bfd55, #f43bfd );
+    background-color: #f3f63f;
+    opacity: 1;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f63f 40px ), repeating-linear-gradient( #f43bfd55, #f43bfd );
 }
 
 #leftBackTop{
@@ -122,13 +121,21 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
     margin-right: 5vh;
     
     height: 100%;
+    overflow: hidden;
 
 }
 @media screen and (max-width: 710px) {
     #aboutMe{
         font-size:15px;
     }
-
+    .toolTips{
+        font-size:12px;
+        top: 16em !important;
+        width: 90%;
+    }
+    .rightBox a {
+        font-size: 15px;
+    }
 }
 
 #cvLink{
@@ -146,26 +153,8 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f
 }
 
 
-.projectToolTips{
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0s;
-}
-#topologyLink:hover #topologyLinkToolTip{
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 1s;
-}
-#listedBuildingLink:hover #listedBuildingLinkToolTip{
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 1s;
-}
-#randomisedCirclesLink:hover #randomisedCirclesLinkToolTip{
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 1s;
-}
+
+
 
 #splitRight {
     color: MediumSeaGreen ;
@@ -175,28 +164,129 @@ opacity: 1;
 background-image:  linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);
 background-size: 80px 140px;
 background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+
+overflow-y: auto;
+height: 100%;
 }
 
-#rightBack{
+#rightFlexWrapper{
+    display: flex;
+    height: 110%;
+    width: 100%;
+    
+    align-items: center;
+    flex-wrap: wrap;
+
+
+}
+
+#splitRight::-webkit-scrollbar {
+    width: 0px;       
+  }
+  #splitRight:hover::-webkit-scrollbar {
+    width: 12px;   
+  }
+  #splitRight::-webkit-scrollbar-track {
+    background: orange;
+  }
+  
+  #splitRight::-webkit-scrollbar-thumb {
+    background-color: blue;   
+    border-radius: 20px;       
+    border: 3px solid orange;  
+  }
+
+.rightBox{
+    text-align: center;
+    width: 50%;
+    height:20vh; /* gap between projects */
+    flex: 40%;
+    
+    
+}
+.angledBoxLeft{
+    border-right: 7vh solid transparent;
     position: absolute;
-    border-radius:5px;
-    height: 90% ;
-    width: 80%;
-    margin-top: 7vh;
-    margin-left: 4vh;
-    box-sizing: border-box;
-    
-    background: linear-gradient(to bottom, rgba(210, 180, 140, 0.9)0%,rgba(210, 180, 140, 0)140%);
-    
-    opacity: 0;
-    transition: opacity 0s;
-    pointer-events: none;
+    left: 0;
+    height: 10%;
 }
 
-#splitRight:hover #rightBack{
+
+.projectLinks{
+    position: absolute;
+    top: 160%;
+    }
+
+.toolTips{
+    position: relative;
+    display:block ;
+    top: 12em;
+    opacity: 0;
+    transition: opacity 1s;
+    pointer-events: none;
+    width: 100%;
+    padding: 10px;
+
+    margin-top: 5%;
+    left: 1em; 
+}
+
+#topologyLinkToolTip{
+    
+    background-color: pink;
+    }
+#networkVisualisation:hover #topologyLinkToolTip{
     opacity: 1;
     transition: opacity 1s;
+    pointer-events: auto;
+}
 
+#listedBuildingLinkToolTip{
+    background-color: rgba(234, 186, 27, 0.915);
+}
+#listedBuildings:hover #listedBuildingLinkToolTip{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+#randomisedCirclesLink:hover #randomisedCirclesLinkToolTip{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.angledBoxRight{
+    border-left: 7vh solid transparent;
+    position: absolute;
+    right: 0;
+}
+:root{
+    --boreder-height:15vh;
+}
+#networkVisualisation{
+    border-bottom: var(--boreder-height) solid rgba(4, 241, 87, 0.8);
+}
+#randomisedCircles{
+    border-bottom: var(--boreder-height) solid rgba(231, 48, 255, 0.8);
+}
+#listedBuildings{
+    border-bottom: var(--boreder-height) solid rgb(244, 165, 48,0.8);
+}
+#thisSite{
+    border-bottom: var(--boreder-height) solid rgba(241,79,4,0.8);
+}
+
+.angledBoxRight ,.angledBoxLeft {
+width: 0%;
+opacity: 0;
+transition: width 0s, opacity 0s,transition, transform 0s ease;
+}
+
+#splitRight:hover .angledBoxRight ,#splitRight:hover .angledBoxLeft {
+    width: 30%;
+    opacity: 1;
+    transition: width 1s, opacity 1s, transform 1s ease;
 }
 
 #personalTitle, #projectsTitle {
@@ -218,14 +308,17 @@ background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
     bottom: 90%;
     transition: translate(0,0);
 }
-#projectsLinks {
-    visibility: hidden;
-    position:absolute ;
-    top: 1vh;
-    opacity: 0;
-    transition: opacity 0s;
     
+    
+.projectsHeadings{
+    margin-left: 10px;
+    margin-bottom: 0;
 }
+#uniProjectsHeading{
+    margin-top: 0;
+}
+
+
 .projectsHeadings{
     margin-left: 10px;
     margin-bottom: 0;

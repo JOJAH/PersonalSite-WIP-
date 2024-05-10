@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jake's Page</title>
+<link rel="stylesheet" href="styles.css"> 
+
+</head>
+<body>
+<header>
+    <h5 id="headerTitle">Welcome to Jake Hearn's personal site</h5>
+</header>
+
+<div id="splitContainer">
+    
+    <div id="splitLeft">
+        <p id="personalTitle">Personal</p>
+        <div id="leftBackTop">
+            
+            <div id="aboutMe">
+                <p>Hi and welcome to my portfolio site! Having completed my Master's in Computer Science and placement role. I'm now developing my own skills and seeking opportunities to apply them in real-world scenarios</p>
+            </div> 
+               
+        </div>
+        <div id="leftBackBottom">
+            <div id="cvLink">
+                <a  href="">Open CV</a>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="splitRight">
+        <p id="projectsTitle">Projects</p>
+        <div id="rightBack">
+            
+            <div id= "projectsLinks">
+                <h4 id="uniProjectsHeading" class="projectsHeadings">University</h4>
+                <ul id="uniProjectList" class="projectList">
+                    <li class="project" id="topologyLink"><a href="projects/networkTopology/networkTopology.html">Device Topology</a>
+                        <span id="topologyLinkToolTip" class="projectToolTips">
+                        <a href="https://github.com/JOJAH/PcapReader-NetworkVisualisation"><img id="githubImg" src="assets/githubBlack.png" alt=""></a> 
+                        </span>
+                    </li>
+                    <li class="project" id="listedBuildingLink"><a href="https://listedbuildings.onrender.com/">Listed Buildings visualisation</a>
+                        <span id="listedBuildingLinkToolTip" class="projectToolTips">
+                            <a href="https://github.com/JOJAH/listedBuildings"><img id="githubImg" src="assets/githubBlack.png" alt=""></a>
+                                May take a minute to intially load</span>
+                    </li>
+                </ul>
+                <h4 class="projectsHeadings">Personal</h4>
+                <ul class="projectList">
+                    <li class="project" id="randomisedCirclesLink"><a href="projects/randomisedCircles/randomisedCircles.html">Randomised Circles</a>
+                        <span id="randomisedCirclesLinkToolTip" class="projectToolTips">
+                            <a href="https://github.com/JOJAH/radomisedCircles"><img id="githubImg" src="assets/githubBlack.png" alt=""></a>
+                        </span>
+                        
+                    </li>
+                    <li class="project">
+                        <a href="https://github.com/JOJAH/personalSiteWIP">This site's github</a>
+                    </li>
+
+                </ul>
+           
+            </div>
+         </div>
+    </div>
+</div>
+
+<footer>
+    <div id="footerLeft">
+        
+        <a href="https://github.com/JOJAH"><img src="assets/github-mark-white.png" alt=""></a> 
+        <a href="https://www.linkedin.com/in/jake-hearn"><img src="assets/linkedin.png"></a> 
+    </div>
+    <div id="footerRight">
+        <h5 id="footerEmail" onclick="copyEmail()">Jakehearn1997@gmail.com
+            <span id="emailToolTip" >Copy to Clipboard</span>
+        </h5> 
+        
+    </div>
+</footer>
+
+</body>
+<script>
+    function copyEmail() {
+        emailSpan = document.getElementById('footerEmail');
+        toolTip = document.getElementById('emailToolTip');
+        const email = emailSpan.innerText.split(' ')[0];
+        navigator.clipboard.writeText(email);
+        alert('email has been copied to clipboard');
+    } 
+    /* stop links from being clickable */
+    splitRight = document.getElementById('splitRight');
+    rightBack = document.getElementById('rightBack');
+
+    splitRight.addEventListener('click', function(){
+        setTimeout(function(){rightBack.style.pointerEvents ='auto', 2000;});
+    });
+    splitRight.addEventListener('mouseleave', function(){
+        rightBack.style.pointerEvents = 'none';
+    });
+</script>
+</html>
