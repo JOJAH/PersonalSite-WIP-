@@ -155,10 +155,6 @@ header:hover #headerTitle{
     color: magenta;
 }
 
-
-
-
-
 #splitRight {
     color: MediumSeaGreen ;
 
@@ -209,16 +205,18 @@ height: 100%;
 }
 .angledBoxLeft{
     border-right: 7vh solid transparent;
-    position: absolute;
     left: 0;
-    height: 10%;
+    
 }
-
+.madeUpClassToTest{
+    top: 10;
+}
 
 .projectLinks{
     position: absolute;
     top: 160%;
-    
+    width: 70%;
+    right: 10%;
     }
 
 .toolTips{
@@ -255,7 +253,7 @@ height: 100%;
     transition: opacity 1s;
 }
 
-#randomisedCirclesLink:hover #randomisedCirclesLinkToolTip{
+#randomisedCircles:hover #randomisedCirclesLinkToolTip{
     visibility: visible;
     opacity: 1;
     transition: opacity 1s;
@@ -283,7 +281,8 @@ height: 100%;
 }
 
 .angledBoxRight ,.angledBoxLeft {
-width: 0%;
+position: absolute;
+height: 10%;
 opacity: 0;
 transition: width 0s, opacity 0s,transition, transform 0s ease;
 }
