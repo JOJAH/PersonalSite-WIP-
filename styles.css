@@ -130,8 +130,6 @@ header:hover #headerTitle{
     }
     .toolTips{
         font-size:12px;
-        margin-top: 10em !important;
-        width: 90%;
     }
     .rightBox a {
         font-size: 15px;
@@ -208,11 +206,13 @@ height: 100%;
 
 .projectLinks{
     position: absolute;
-    margin-top: 10%;
+    margin-top: 2em;
     width: 70%;
     right: 10%;
     }
+@media screen and (max-width: 1500px) {
 
+}
 .toolTips{
     position: relative;
     display:block ;
@@ -223,12 +223,14 @@ height: 100%;
     border-radius: 15px / 50px;
 
     left: 1em;
-    margin-top: 8em;
+    margin-top: -8em;
+    top: 31vh;
 }
 
 #topologyLinkToolTip{
     color: #ff6600;
     background-color: rgba(26, 231, 129, 0.95);
+    margin-top: -8em;
     }
 #networkVisualisation:hover #topologyLinkToolTip{
     opacity: 1;
@@ -237,6 +239,7 @@ height: 100%;
 
 #listedBuildingLinkToolTip{
     background-color: rgba(234, 186, 27, 0.95);
+    margin-top: -8em;
 }
 #listedBuildings:hover #listedBuildingLinkToolTip{
     visibility: visible;
@@ -247,6 +250,7 @@ height: 100%;
     background-color: rgba(242, 25, 231, 0.95);
     right: 2em;
     left: auto;
+    margin-top: -8em;
 }
 
 #randomisedCircles:hover #randomisedCirclesLinkToolTip{
