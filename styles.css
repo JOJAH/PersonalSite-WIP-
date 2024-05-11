@@ -130,8 +130,11 @@ header:hover #headerTitle{
     }
     .toolTips{
         font-size:12px;
-        top: 16em !important;
+        top: 280% !important;
         width: 90%;
+    }
+    .projectLinks{
+        top: 130% !important;
     }
     .rightBox a {
         font-size: 15px;
@@ -159,9 +162,9 @@ header:hover #headerTitle{
 #splitRight {
     color: MediumSeaGreen ;
 
-background-color: #097a03;
+background-color: #030303;
 opacity: 1;
-background-image:  linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);
+background-image:  linear-gradient(30deg, #CB8CF7 12%, transparent 12.5%, transparent 87%, #CB8CF7 87.5%, #CB8CF7), linear-gradient(150deg, #CB8CF7 12%, transparent 12.5%, transparent 87%, #CB8CF7 87.5%, #CB8CF7), linear-gradient(30deg, #CB8CF7 12%, transparent 12.5%, transparent 87%, #CB8CF7 87.5%, #CB8CF7), linear-gradient(150deg, #CB8CF7 12%, transparent 12.5%, transparent 87%, #CB8CF7 87.5%, #CB8CF7), linear-gradient(60deg, #CB8CF777 25%, transparent 25.5%, transparent 75%, #CB8CF777 75%, #CB8CF777), linear-gradient(60deg, #CB8CF777 25%, transparent 25.5%, transparent 75%, #CB8CF777 75%, #CB8CF777);
 background-size: 80px 140px;
 background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 
@@ -215,25 +218,27 @@ height: 100%;
 .projectLinks{
     position: absolute;
     top: 160%;
+    
     }
 
 .toolTips{
     position: relative;
     display:block ;
-    top: 12em;
+    top: 260%;
     opacity: 0;
     transition: opacity 1s;
     pointer-events: none;
     width: 100%;
     padding: 10px;
+    border-radius: 15px / 50px;
 
     margin-top: 5%;
     left: 1em; 
 }
 
 #topologyLinkToolTip{
-    
-    background-color: pink;
+    color: #ff6600;
+    background-color: rgba(26, 231, 129, 0.95);
     }
 #networkVisualisation:hover #topologyLinkToolTip{
     opacity: 1;
