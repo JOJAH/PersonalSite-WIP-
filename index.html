@@ -40,7 +40,7 @@
                     <span class="projectLinks" id="topologyLink">
                         <a href="projects/networkTopology/networkTopology.html">Device Topology</a>
                         <br>
-                        <a href="https://github.com/JOJAH/PcapReader-NetworkVisualisation"><img id="githubImg" src="assets/githubBlack.png" alt=""></a> 
+                        <a id="githubImgLink" href="https://github.com/JOJAH/PcapReader-NetworkVisualisation"><img id="githubImg" src="assets/githubBlack.png" alt=""></a> 
                     </span>
                     <span id="topologyLinkToolTip" class="toolTips">
                         
@@ -59,7 +59,7 @@
                     <span class="projectLinks" id="randomisedCirclesLink">
                         <a href="projects/randomisedCircles/randomisedCircles.html">Randomised Circles</a>
                         <br>
-                        <a href="https://github.com/JOJAH/radomisedCircles"><img id="githubImg" src="assets/githubBlack.png" alt=""></a> 
+                        <a id="githubImgLink" href="https://github.com/JOJAH/radomisedCircles"><img id="githubImg" src="assets/githubBlack.png" alt=""></a> 
                     </span>
                     <span id="randomisedCirclesLinkToolTip" class="toolTips">
                         
@@ -76,7 +76,7 @@
                     <span class="projectLinks" id="listedBuildingLink">       
                         <a href="https://listedbuildings.onrender.com/">Listed Buildings</a>
                         <br>
-                        <a href="https://github.com/JOJAH/listedBuildings"><img id="githubImg" src="assets/githubBlack.png" alt=""></a>
+                        <a id="githubImgLink" href="https://github.com/JOJAH/listedBuildings"><img id="githubImg" src="assets/githubBlack.png" alt=""></a>
                     </span>
                     <span id="listedBuildingLinkToolTip" class="toolTips">
                         
@@ -139,10 +139,18 @@ function makeElementClickable(item,area){
         item.style.pointerEvents = 'none';
     });
 }
-splitRight = document.getElementById('splitRight');
-rightBack = document.getElementById('rightFlexWrapper');
+/* making the links in splitRight not clickable until opened */
+const splitRight = document.getElementById('splitRight');
+const rightBack = document.getElementById('rightFlexWrapper');
 makeElementClickable(rightBack, splitRight);
 
+/* making the project github imgs not clickable until the project is hovered on */
+const angledBoxes = document.querySelectorAll('.angledBoxRight, .angledBoxLeft');
+
+angledBoxes.forEach((box) =>{
+    const githubImg = box.querySelector('#githubImgLink');
+    makeElementClickable(githubImg, box);
+});
 
     /* Moving the angled boxes in splitRight when the one above is hovered on */
 
@@ -167,9 +175,10 @@ makeElementClickable(rightBack, splitRight);
         });
     }
 
-    const angledLeft = document.querySelectorAll('.angledBoxLeft');
-    const angledRight = document.querySelectorAll('.angledBoxRight');
-    angledBoxMovement(angledLeft);
-    angledBoxMovement(angledRight);
+const angledLeft = document.querySelectorAll('.angledBoxLeft');
+const angledRight = document.querySelectorAll('.angledBoxRight');
+angledBoxMovement(angledLeft);
+angledBoxMovement(angledRight);
+
 </script>
 </html>

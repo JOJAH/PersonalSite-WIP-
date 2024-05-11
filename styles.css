@@ -322,6 +322,9 @@ transition: width 0s, opacity 0s,transition, transform 0s ease;
     opacity: 0;
     transition: opacity 0s;
 }
+#githubImgLink{
+    pointer-events: none;
+}
 .angledBoxLeft:hover #githubImg, .angledBoxRight:hover #githubImg {
     opacity: 1;
     transition: opacity 1s;
