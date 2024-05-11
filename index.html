@@ -34,6 +34,7 @@
         <p id="projectsTitle">Projects</p>
         <section id="rightFlexWrapper">
 
+
             <div class="rightBox">
                 <div class="angledBoxLeft" id="networkVisualisation">
                     <span class="projectLinks" id="topologyLink">
@@ -69,7 +70,7 @@
 
                 </div>
             </div>
-
+            
             <div class="rightBox">
                 <div class="angledBoxLeft" id="listedBuildings">
                     <span class="projectLinks" id="listedBuildingLink">       
@@ -128,15 +129,19 @@
         alert('email has been copied to clipboard');
     } 
     /* stop links in splitRight from being clickable */
-    splitRight = document.getElementById('splitRight');
-    rightBack = document.getElementById('rightFlexWrapper');
+    
 
-    splitRight.addEventListener('mouseenter', function(){
-        setTimeout(function(){rightBack.style.pointerEvents ='auto', 2000;});
+function makeElementClickable(item,area){
+    area.addEventListener('mouseenter', function(){
+        setTimeout(function(){item.style.pointerEvents ='auto', 2000;});
     });
-    splitRight.addEventListener('mouseleave', function(){
-        rightBack.style.pointerEvents = 'none';
+    area.addEventListener('mouseleave', function(){
+        item.style.pointerEvents = 'none';
     });
+}
+splitRight = document.getElementById('splitRight');
+rightBack = document.getElementById('rightFlexWrapper');
+makeElementClickable(rightBack, splitRight);
 
 
     /* Moving the angled boxes in splitRight when the one above is hovered on */
@@ -147,7 +152,7 @@
                 for(let i =index;i<=angledBox.length;i++){
                     try{
                         angledBox[i].style.width = '40%'
-                        angledBox[i+1].style.transform = 'translateY(180%)';
+                        angledBox[i+1].style.transform = 'translateY(250%)';
                     }catch(error){}
                 }
             });
