@@ -230,8 +230,8 @@ height: 100%;
     padding: 10px;
     border-radius: 15px / 50px;
 
+    left: 1em;
     margin-top: 5%;
-    left: 1em; 
 }
 
 #topologyLinkToolTip{
@@ -245,12 +245,17 @@ height: 100%;
 }
 
 #listedBuildingLinkToolTip{
-    background-color: rgba(234, 186, 27, 0.915);
+    background-color: rgba(234, 186, 27, 0.95);
 }
 #listedBuildings:hover #listedBuildingLinkToolTip{
     visibility: visible;
     opacity: 1;
     transition: opacity 1s;
+}
+#randomisedCirclesLinkToolTip{
+    background-color: rgba(242, 25, 231, 0.95);
+    right: 2em;
+    left: auto;
 }
 
 #randomisedCircles:hover #randomisedCirclesLinkToolTip{

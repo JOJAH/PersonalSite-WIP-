@@ -145,18 +145,18 @@
         angledBox.forEach((box, index)=>{
             box.addEventListener('mouseenter', ()=>{
                 for(let i =index;i<=angledBox.length;i++){
-                    angledBox[i].style.width = '40%'
                     try{
+                        angledBox[i].style.width = '40%'
                         angledBox[i+1].style.transform = 'translateY(180%)';
-                    }finally{}
+                    }catch(error){}
                 }
             });
             box.addEventListener('mouseleave', ()=>{
                 for(let i =index;i<=angledBox.length;i++){
-                    angledBox[i].style.width = '30%'
                     try{
+                        angledBox[i].style.width = '30%'
                         angledBox[i+1].style.transform = 'translateY(0%)';;
-                    }finally{}
+                    }catch(error){}
                 }
             });
         });
