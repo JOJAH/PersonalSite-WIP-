@@ -175,10 +175,11 @@ height: 100%;
     
     align-items: center;
     flex-wrap: wrap;
-
-
+    pointer-events: none;
 }
-
+#splitRight:hover #rightFlexWrapper{
+    pointer-events: auto;
+}
 #splitRight::-webkit-scrollbar {
     width: 0px;       
   }
@@ -225,7 +226,6 @@ height: 100%;
     top: 260%;
     opacity: 0;
     transition: opacity 1s;
-    pointer-events: none;
     width: 100%;
     padding: 10px;
     border-radius: 15px / 50px;
@@ -241,7 +241,6 @@ height: 100%;
 #networkVisualisation:hover #topologyLinkToolTip{
     opacity: 1;
     transition: opacity 1s;
-    pointer-events: auto;
 }
 
 #listedBuildingLinkToolTip{
