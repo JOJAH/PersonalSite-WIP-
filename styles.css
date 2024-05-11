@@ -175,6 +175,7 @@ height: 100%;
     
     align-items: center;
     flex-wrap: wrap;
+    pointer-events: none;
 }
 #splitRight::-webkit-scrollbar {
     width: 0px;       
