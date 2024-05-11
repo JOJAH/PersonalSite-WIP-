@@ -312,47 +312,12 @@ transition: width 0s, opacity 0s,transition, transform 0s ease;
     bottom: 90%;
     transition: translate(0,0);
 }
-    
-    
-.projectsHeadings{
-    margin-left: 10px;
-    margin-bottom: 0;
-}
-#uniProjectsHeading{
-    margin-top: 0;
-}
 
-
-.projectsHeadings{
-    margin-left: 10px;
-    margin-bottom: 0;
-}
-#uniProjectsHeading{
-    margin-top: 0;
-}
 #githubImg{
     height: 30px;
     width: 30px;
     vertical-align: middle;
     margin-left: 10px;
-}
-.projectList{
-    list-style-type: none;
-}
-.projectList li::before{
-    content:'-';
-    margin-right: 5px;
-}
-#rightBack ul{
-    padding-left: 1vh;
-}
-#uniProjectList{
-    margin-top: 10px;
-}
-#splitRight:hover #projectsLinks{
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 2s;
 }
 
 #splitRight:hover, #splitLeft:hover {
