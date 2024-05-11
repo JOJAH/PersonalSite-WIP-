@@ -227,7 +227,7 @@ height: 100%;
     border-radius: 15px / 50px;
 
     left: 1em;
-    margin-top: 5%;
+    margin-top: 6%;
 }
 
 #topologyLinkToolTip{
@@ -318,6 +318,12 @@ transition: width 0s, opacity 0s,transition, transform 0s ease;
     width: 30px;
     vertical-align: middle;
     margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0s;
+}
+.angledBoxLeft:hover #githubImg, .angledBoxRight:hover #githubImg {
+    opacity: 1;
+    transition: opacity 1s;
 }
 
 #splitRight:hover, #splitLeft:hover {
