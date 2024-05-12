@@ -254,9 +254,8 @@ height: 100%;
   mask-position: -1.5rem -1.5rem;
   mask-repeat: repeat;
 
-    background: rgb(131,221,0);
-    background: linear-gradient(90deg, rgba(131,221,0,1) 0%, rgba(64,138,99,1) 22%, rgba(141,3,178,0.8492647058823529) 48%, rgba(255,0,249,1) 100%);
-    
+  background: rgb(0,240,11);
+  background: linear-gradient(90deg, rgba(0,240,11,0.8240546218487395) 1%, rgba(7,226,252,0.6980042016806722) 55%, rgba(235,33,213,0.829656862745098) 100%);
 }
 #networkVisualisation:hover #topologyLinkToolTip{
     opacity: 1;
