@@ -213,10 +213,8 @@ height: 100%;
     margin-top: 2em;
     width: 70%;
     right: 10%;
-    }
-@media screen and (max-width: 1500px) {
-
 }
+
 .toolTips{
     position: relative;
     display:block ;
@@ -225,17 +223,35 @@ height: 100%;
     width: 100%;
     padding: 10px;
     border-radius: 15px / 50px;
+    
 
     left: 1em;
     margin-top: -8em;
     top: 34vh;
+
+    
 }
 
+
 #topologyLinkToolTip{
-    color: #ff6600;
-    background-color: rgba(26, 231, 129, 0.95);
+    color: white;
     margin-top: -8em;
-    }
+
+    mask-image: 
+    radial-gradient(
+      circle at 1.5rem 1.5rem,
+      transparent 0, transparent 1rem, 
+      gold 0, gold 1.25rem,
+      transparent 0, transparent 1.5rem, 
+      gold 0
+    );
+  mask-position: -1.5rem -1.5rem;
+  mask-repeat: repeat;
+
+    background: rgb(131,221,0);
+    background: linear-gradient(90deg, rgba(131,221,0,1) 0%, rgba(64,138,99,1) 22%, rgba(141,3,178,0.8492647058823529) 48%, rgba(255,0,249,1) 100%);
+    
+}
 #networkVisualisation:hover #topologyLinkToolTip{
     opacity: 1;
     transition: opacity 1s;
@@ -244,6 +260,7 @@ height: 100%;
 #listedBuildingLinkToolTip{
     background-color: rgba(234, 186, 27, 0.95);
     margin-top: -8em;
+    
 }
 #listedBuildings:hover #listedBuildingLinkToolTip{
     visibility: visible;
@@ -251,7 +268,10 @@ height: 100%;
     transition: opacity 1s;
 }
 #randomisedCirclesLinkToolTip{
-    background-color: rgba(242, 25, 231, 0.95);
+    background: rgb(252,200,7);
+background: linear-gradient(90deg, rgba(252,200,7,1) 0%, rgba(244,176,49,1) 22%, rgba(248,0,255,1) 59%, rgba(141,3,178,0.8492647058823529) 100%);
+
+
     right: 2em;
     left: auto;
     margin-top: -8em;
