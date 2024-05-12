@@ -112,7 +112,6 @@ header:hover #headerTitle{
     visibility: visible;
 }
 
-
 #aboutMe { 
     bottom: 10%;
     left: 10%;
@@ -129,7 +128,7 @@ header:hover #headerTitle{
         font-size:15px;
     }
     .toolTips{
-        font-size:12px;
+        font-size:13px;
     }
     .rightBox a {
         font-size: 15px;
@@ -196,7 +195,7 @@ height: 100%;
 .rightBox{
     text-align: center;
     width: 50%;
-    height:20vh; /* gap between projects */
+    height:30vh; /* gap between projects */
     flex: 40%;
 }
 
