@@ -210,15 +210,9 @@ angledBoxes.forEach((box) =>{
                         angledBox[i+1].style.opacity = '0';
                     }catch(error){}
                 }
+                setTimeout(angledBox[i+1].style.opacity = '1',2000);
             });
-            box.addEventListener('touchend', ()=>{
-                for(let i =index;i<=angledBox.length;i++){
-                    try{
-                        angledBox[i].style.width = '30%'
-                        angledBox[i+1].style.opacity = '1';
-                    }catch(error){}
-                }
-            });
+            
         });
     }
 
