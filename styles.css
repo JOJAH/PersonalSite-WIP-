@@ -187,6 +187,11 @@ height: 100%;
     border-radius: 20px;       
     border: 3px solid orange;  
   }
+.first2RB{
+    width: 50%;
+    height:5vh; 
+    flex: 40%;
+}
 
 .rightBox{
     text-align: center;
@@ -224,7 +229,7 @@ height: 100%;
 
     left: 1em;
     margin-top: -8em;
-    top: 31vh;
+    top: 34vh;
 }
 
 #topologyLinkToolTip{
@@ -307,7 +312,6 @@ transition: width 0s, opacity 0s,transition, transform 0s ease;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
-
 #splitRight:hover #projectsTitle, #splitLeft:hover #personalTitle{
     font-size: 30px;
     bottom: 90%;
@@ -320,7 +324,7 @@ transition: width 0s, opacity 0s,transition, transform 0s ease;
     vertical-align: middle;
     margin-left: 10px;
     opacity: 0;
-    transition: opacity 0s;
+    transition: opacity 1s;
 }
 #githubImgLink{
     pointer-events: none;
