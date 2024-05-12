@@ -150,7 +150,6 @@ header:hover #headerTitle{
 }
 
 #splitRight {
-
 background-color: #030303;
 opacity: 1;
 background-image:  linear-gradient(30deg, #CB8CF7 12%, transparent 12.5%, transparent 87%, #CB8CF7 87.5%, #CB8CF7), linear-gradient(150deg, #CB8CF7 12%, transparent 12.5%, transparent 87%, #CB8CF7 87.5%, #CB8CF7), linear-gradient(30deg, #CB8CF7 12%, transparent 12.5%, transparent 87%, #CB8CF7 87.5%, #CB8CF7), linear-gradient(150deg, #CB8CF7 12%, transparent 12.5%, transparent 87%, #CB8CF7 87.5%, #CB8CF7), linear-gradient(60deg, #CB8CF777 25%, transparent 25.5%, transparent 75%, #CB8CF777 75%, #CB8CF777), linear-gradient(60deg, #CB8CF777 25%, transparent 25.5%, transparent 75%, #CB8CF777 75%, #CB8CF777);
@@ -378,7 +377,9 @@ transition: width 0s, opacity 0s,transition, transform 0s ease;
     bottom: 90%;
     transition: translate(0,0);
 }
-
+#githubImgLink{
+    pointer-events: none;
+}
 #githubImg{
     height: 30px;
     width: 30px;
@@ -386,10 +387,9 @@ transition: width 0s, opacity 0s,transition, transform 0s ease;
     margin-left: 10px;
     opacity: 0;
     transition: opacity 1s;
+    margin-top: 2px;
 }
-#githubImgLink{
-    pointer-events: none;
-}
+
 .angledBoxLeft:hover #githubImg, .angledBoxRight:hover #githubImg {
     opacity: 1;
     transition: opacity 1s;
