@@ -194,7 +194,7 @@ height: 100%;
 .rightBox{
     text-align: center;
     width: 50%;
-    height:30vh; /* gap between projects */
+    height:20vh; /* gap between projects */
     flex: 40%;
 }
 
