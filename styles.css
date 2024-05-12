@@ -4,11 +4,12 @@ body, html {
     height: 100%;
     font-family: Arial, sans-serif;
     font-weight: bold;
+    color: white;
 }
 header {
     height: 10%;
     background-color: black;
-    color: white;
+    
     text-align: center;
     padding: 10px 0;
     box-sizing: border-box; 
@@ -33,7 +34,6 @@ header:hover #headerTitle{
     overflow: hidden;
 }
 #splitLeft {
-    color: cornflowerblue;
     background-color: #f3f63f;
     opacity: 1;
     background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f3f63f 40px ), repeating-linear-gradient( #f43bfd55, #f43bfd );
@@ -150,7 +150,6 @@ header:hover #headerTitle{
 }
 
 #splitRight {
-    color: MediumSeaGreen ;
 
 background-color: #030303;
 opacity: 1;
@@ -234,7 +233,6 @@ height: 100%;
 
 
 #topologyLinkToolTip{
-    color: white;
     margin-top: -8em;
 
     mask-image: 
@@ -258,8 +256,46 @@ height: 100%;
 }
 
 #listedBuildingLinkToolTip{
-    background-color: rgba(234, 186, 27, 0.95);
     margin-top: -8em;
+
+    border-radius: 0px / 0px;
+
+    background: rgb(252,200,7);
+background: linear-gradient(90deg, rgba(252,200,7,0.6980042016806722) 0%, rgba(244,176,49,0.829656862745098) 22%, rgba(255,145,0,0.8044467787114846) 59%, rgba(255,27,27,0.8240546218487395) 100%);
+
+
+    mask-image: 
+    linear-gradient(
+      135deg,
+      transparent 1.25rem, 
+      gold 0
+    ),
+    linear-gradient(
+      -135deg,
+      transparent .5rem, 
+      gold 0, gold .75rem,
+      transparent 0, transparent 1rem, 
+      gold 0, gold 1.25rem,
+      transparent 0, transparent 1.5rem, 
+      gold 0
+    ),
+    linear-gradient(
+      45deg,
+      transparent .5rem, 
+      gold 0, gold .75rem,
+      transparent 0, transparent 1rem, 
+      gold 0, gold 1.25rem,
+      transparent 0, transparent 1.5rem, 
+      gold 0
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 1.25rem, 
+      gold 0
+    );
+  mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+  mask-repeat: no-repeat;
+  mask-size: 51% 51%;
     
 }
 #listedBuildings:hover #listedBuildingLinkToolTip{
@@ -275,6 +311,17 @@ background: linear-gradient(90deg, rgba(252,200,7,1) 0%, rgba(244,176,49,1) 22%,
     right: 2em;
     left: auto;
     margin-top: -8em;
+
+    mask-image: 
+    radial-gradient(
+      circle at 1.5rem 1.5rem,
+      transparent 0, transparent 1rem, 
+      gold 0, gold 1.25rem,
+      transparent 0, transparent 1.5rem, 
+      gold 0
+    );
+  mask-position: -1.5rem -1.5rem;
+  mask-repeat: repeat;
 }
 
 #randomisedCircles:hover #randomisedCirclesLinkToolTip{
@@ -326,11 +373,10 @@ transition: width 0s, opacity 0s,transition, transform 0s ease;
     transition: font-size 1s, bottom 1s;
     font-weight: bolder;
     margin-left: 5px;
-}
-#projectsTitle {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
+
 #splitRight:hover #projectsTitle, #splitLeft:hover #personalTitle{
     font-size: 30px;
     bottom: 90%;
