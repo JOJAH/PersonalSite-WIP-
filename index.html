@@ -162,6 +162,13 @@ function makeElementClickable(item,area){
     area.addEventListener('mouseleave', function(){
         item.style.pointerEvents = 'none';
     });
+
+    area.addEventListener('touchstart', function(){
+        setTimeout(function(){item.style.pointerEvents ='auto', 2000;});
+    });
+    area.addEventListener('touchend', function(){
+        item.style.pointerEvents = 'none';
+    });
 }
 /* making the links in splitRight not clickable until opened */
 const splitRight = document.getElementById('splitRight');
@@ -189,6 +196,22 @@ angledBoxes.forEach((box) =>{
                 }
             });
             box.addEventListener('mouseleave', ()=>{
+                for(let i =index;i<=angledBox.length;i++){
+                    try{
+                        angledBox[i].style.width = '30%'
+                        angledBox[i+1].style.transform = 'translateY(0%)';;
+                    }catch(error){}
+                }
+            });
+            box.addEventListener('touchstart', ()=>{
+                for(let i =index;i<=angledBox.length;i++){
+                    try{
+                        angledBox[i].style.width = '40%'
+                        angledBox[i+1].style.transform = 'translateY(250%)';
+                    }catch(error){}
+                }
+            });
+            box.addEventListener('touchend', ()=>{
                 for(let i =index;i<=angledBox.length;i++){
                     try{
                         angledBox[i].style.width = '30%'
