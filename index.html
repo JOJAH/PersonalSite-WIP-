@@ -166,7 +166,7 @@ function makeElementClickable(item,area){
     area.addEventListener('touchstart', function(){
         setTimeout(function(){item.style.pointerEvents ='auto', 2000;});
     });
-    area.addEventListener('touchend', function(){
+    area.addEventListener('mouseleave', function(){
         item.style.pointerEvents = 'none';
     });
 }
@@ -207,12 +207,18 @@ angledBoxes.forEach((box) =>{
                 for(let i =index;i<=angledBox.length;i++){
                     try{
                         angledBox[i].style.width = '40%'
-                        angledBox[i+1].style.opacity = '0';
+                        angledBox[i+1].style.transform = 'translateY(250%)';
                     }catch(error){}
                 }
-                setTimeout(angledBox[i+1].style.opacity = '1',2000);
             });
-            
+            box.addEventListener('touchend', ()=>{
+                for(let i =index;i<=angledBox.length;i++){
+                    try{
+                        angledBox[i].style.width = '30%'
+                        angledBox[i+1].style.transform = 'translateY(0%)';;
+                    }catch(error){}
+                }
+            });
         });
     }
 
