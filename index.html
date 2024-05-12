@@ -207,7 +207,7 @@ angledBoxes.forEach((box) =>{
                 for(let i =index;i<=angledBox.length;i++){
                     try{
                         angledBox[i].style.width = '40%'
-                        angledBox[i+1].style.transform = 'translateY(250%)';
+                        angledBox[i+1].style.opacity = '0';
                     }catch(error){}
                 }
             });
@@ -215,7 +215,7 @@ angledBoxes.forEach((box) =>{
                 for(let i =index;i<=angledBox.length;i++){
                     try{
                         angledBox[i].style.width = '30%'
-                        angledBox[i+1].style.transform = 'translateY(0%)';;
+                        angledBox[i+1].style.opacity = '1';
                     }catch(error){}
                 }
             });
