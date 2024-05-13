@@ -74,7 +74,7 @@ header:hover #headerTitle{
 #splitLeft:hover #leftBackTop{
     opacity: 1;
     width: 75%;
-    transition: opacity 2s, width 1s;
+    transition: opacity 2s, width 0.5s;
     display:flex;
 }
 
