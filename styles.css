@@ -217,7 +217,7 @@ height: 100%;
 .projectLinks > a{
     pointer-events: none;
 }
-.angledBoxLeft:hover a, .angledBoxRight:hover a {
+.angledBox:hover a{
     color: white;
     pointer-events: auto;
 }
@@ -254,7 +254,6 @@ height: 100%;
   mask-position: -1.5rem -1.5rem;
   mask-repeat: repeat;
 
-  background: rgb(0,240,11);
   background: linear-gradient(90deg, rgba(0,240,11,0.8240546218487395) 1%, rgba(7,226,252,0.6980042016806722) 55%, rgba(235,33,213,0.829656862745098) 100%);
 }
 #networkVisualisation:hover #topologyLinkToolTip{
@@ -263,7 +262,7 @@ height: 100%;
 }
 
 #randomisedCirclesLinkToolTip{
-    background: rgb(252,200,7);
+    
     background: linear-gradient(90deg, rgba(252,200,7,0.6980042016806722) 0%, rgba(244,176,49,0.829656862745098) 22%, rgba(252,0,255,0.8044467787114846) 59%, rgba(240,0,231,0.8240546218487395) 100%);
 
     right: 2em;
@@ -405,7 +404,7 @@ height: 100%;
     margin-bottom: -15px;
 }
 
-.angledBoxRight ,.angledBoxLeft {
+.angledBox{
 position: absolute;
 height: 0;
 opacity: 0;
@@ -413,7 +412,7 @@ margin-top: 10%;
 transition: width 0s, opacity 0s,transition, transform 0s ease;
 }
 
-#splitRight:hover .angledBoxRight ,#splitRight:hover .angledBoxLeft {
+#splitRight:hover .angledBox{
     width: 30%;
     opacity: 1;
     transition: width 1s, opacity 1s, transform 1s ease;
@@ -449,7 +448,7 @@ transition: width 0s, opacity 0s,transition, transform 0s ease;
     margin-top: 2px;
 }
 
-.angledBoxLeft:hover #githubImg, .angledBoxRight:hover #githubImg {
+.angledBox:hover #githubImg {
     opacity: 1;
     transition: opacity 1s;
 }

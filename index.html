@@ -38,7 +38,7 @@
             <div class="first2RB"></div>
             
             <div class="rightBox">
-                <div class="angledBoxLeft" id="networkVisualisation">
+                <div class="angledBox angledBoxLeft" id="networkVisualisation">
                     <span class="projectLinks" id="topologyLink">
                         <a href="projects/networkTopology/networkTopology.html">Network Topology</a>
                         <br>
@@ -57,7 +57,7 @@
 
             <div class="rightBox"></div>
             <div class="rightBox">
-                <div class="angledBoxRight" id="randomisedCircles">
+                <div class="angledBox angledBoxRight" id="randomisedCircles">
                     <span class="projectLinks" id="randomisedCirclesLink">
                         <a href="projects/randomisedCircles/randomisedCircles.html">Randomised Circles</a>
                         <br>
@@ -75,7 +75,7 @@
             </div>
             
             <div class="rightBox">
-                <div class="angledBoxLeft" id="listedBuildings">
+                <div class="angledBox angledBoxLeft" id="listedBuildings">
                     <span class="projectLinks" id="listedBuildingLink">       
                         <a href="https://listedbuildings.onrender.com/">Listed Buildings</a>
                         <br>
@@ -98,7 +98,7 @@
 
             <div class="rightBox"></div>
             <div class="rightBox">
-                <div class="angledBoxRight" id="thisSite">
+                <div class="angledBox angledBoxRight" id="thisSite">
                     <span class="projectLinks">       
                         <p id="ThisSiteTitle">This Site</p>
                         <br>
@@ -113,7 +113,7 @@
             </div>
 
             <div class="rightBox">
-                <div class="angledBoxLeft" id="networkVisualisation">
+                <div class="angledBox angledBoxLeft" id="networkVisualisation">
                     <span class="projectLinks">       
                         <p>Coming Soon</p>
                     </span>
@@ -170,14 +170,14 @@ const rightBack = document.getElementById('rightFlexWrapper');
 makeElementClickable(rightBack, splitRight);
 
 /* making the project github imgs not clickable until the project is hovered on */
-const angledBoxes = document.querySelectorAll('.angledBoxRight, .angledBoxLeft');
+const angledBoxes = document.querySelectorAll('.angledBox');
 
 angledBoxes.forEach((box) =>{
     const githubImg = box.querySelector('#githubImgLink');
     makeElementClickable(githubImg, box);
 });
 
-    /* Moving the angled boxes in splitRight when the one above is hovered on */
+/* Moving the angled boxes in splitRight when the one above is hovered on */
 
     function angledBoxMovement(angledBox){
         angledBox.forEach((box, index)=>{
@@ -200,10 +200,7 @@ angledBoxes.forEach((box) =>{
         });
     }
 
-const angledLeft = document.querySelectorAll('.angledBoxLeft');
-const angledRight = document.querySelectorAll('.angledBoxRight');
-angledBoxMovement(angledLeft);
-angledBoxMovement(angledRight);
+angledBoxMovement(angledBoxes);
 
 </script>
 </html>
