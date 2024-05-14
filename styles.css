@@ -332,8 +332,6 @@ height: 100%;
     right: 2em;
     left: auto;
 
-    border-radius: 0px / 0px;
-
     mask-image: 
     linear-gradient(
       135deg,
@@ -373,22 +371,6 @@ height: 100%;
     visibility: visible;
     opacity: 1;
     transition: opacity 1s;
-}
-
-:root{
-    --boreder-height:15vh;
-}
-#networkVisualisation{
-    border-bottom: var(--boreder-height) solid rgba(4, 241, 87, 0.8);
-}
-#randomisedCircles{
-    border-bottom: var(--boreder-height) solid rgba(231, 48, 255, 0.8);
-}
-#listedBuildings{
-    border-bottom: var(--boreder-height) solid rgb(244, 165, 48,0.8);
-}
-#thisSite{
-    border-bottom: var(--boreder-height) solid rgba(241,79,4,0.8);
 }
 
 #ThisSiteTitle{
