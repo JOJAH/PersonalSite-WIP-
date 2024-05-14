@@ -197,6 +197,13 @@ height: 100%;
     flex: 40%;
 }
 
+.angledBox{
+    position: absolute;
+    height: 0;
+    opacity: 0;
+    margin-top: 10%;
+    transition: width 0s, opacity 0s,transition, transform 0s ease;
+    }
 .angledBoxLeft{
     border-right: 7vh solid transparent;
     left: 0;
@@ -256,7 +263,7 @@ height: 100%;
 
   
 }
-#networkVisualisation:hover #topologyLinkToolTip{
+.angledBox:hover .toolTips{
     opacity: 1;
     transition: opacity 1s;
 }
@@ -277,11 +284,7 @@ height: 100%;
   mask-position: -1.5rem -1.5rem;
   mask-repeat: repeat;
 }
-#randomisedCircles:hover #randomisedCirclesLinkToolTip{
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 1s;
-}
+
 
 #listedBuildingLinkToolTip{
     margin-top: -8em;
@@ -322,11 +325,7 @@ height: 100%;
   mask-size: 51% 51%;
     
 }
-#thisSite:hover #thisSiteLinkToolTip{
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 1s;
-}
+
 #thisSiteLinkToolTip{
     margin-top: -8em;
     right: 2em;
@@ -367,23 +366,11 @@ height: 100%;
 
 }
 
-#listedBuildings:hover #listedBuildingLinkToolTip{
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 1s;
-}
-
 #ThisSiteTitle{
     margin-bottom: -15px;
 }
 
-.angledBox{
-position: absolute;
-height: 0;
-opacity: 0;
-margin-top: 10%;
-transition: width 0s, opacity 0s,transition, transform 0s ease;
-}
+
 
 #splitRight:hover .angledBox{
     width: 30%;
