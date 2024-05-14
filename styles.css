@@ -254,7 +254,7 @@ height: 100%;
   mask-position: -1.5rem -1.5rem;
   mask-repeat: repeat;
 
-  background: linear-gradient(90deg, rgba(0,240,11,0.8240546218487395) 1%, rgba(7,226,252,0.6980042016806722) 55%, rgba(235,33,213,0.829656862745098) 100%);
+  
 }
 #networkVisualisation:hover #topologyLinkToolTip{
     opacity: 1;
@@ -262,9 +262,6 @@ height: 100%;
 }
 
 #randomisedCirclesLinkToolTip{
-    
-    background: linear-gradient(90deg, rgba(252,200,7,0.6980042016806722) 0%, rgba(244,176,49,0.829656862745098) 22%, rgba(252,0,255,0.8044467787114846) 59%, rgba(240,0,231,0.8240546218487395) 100%);
-
     right: 2em;
     left: auto;
     margin-top: -8em;
@@ -290,9 +287,6 @@ height: 100%;
     margin-top: -8em;
 
     border-radius: 0px / 0px;
-
-    background: rgb(252,200,7);
-    background: linear-gradient(90deg, rgba(252,200,7,0.6980042016806722) 0%, rgba(244,176,49,0.829656862745098) 22%, rgba(255,145,0,0.8044467787114846) 59%, rgba(255,27,27,0.8240546218487395) 100%);
 
     mask-image: 
     linear-gradient(
@@ -339,9 +333,6 @@ height: 100%;
     left: auto;
 
     border-radius: 0px / 0px;
-
-    background: rgb(0,206,240);
-    background: linear-gradient(90deg, rgba(0,206,240,0.8240546218487395) 1%, rgba(0,255,231,0.8044467787114846) 22%, rgba(252,200,7,0.6980042016806722) 71%, rgba(244,176,49,0.829656862745098) 100%);
 
     mask-image: 
     linear-gradient(
