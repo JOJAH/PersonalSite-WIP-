@@ -246,22 +246,49 @@ height: 100%;
     top: 34vh;
 }
 
+:root{
+    --circleBorder: radial-gradient(
+        circle at 1.5rem 1.5rem,
+        transparent 0, transparent 1rem, 
+        gold 0, gold 1.25rem,
+        transparent 0, transparent 1.5rem, 
+        gold 0
+      );
+    
+    --stripedBorder: linear-gradient(
+        135deg,
+        transparent 1.25rem, 
+        gold 0
+      ),
+      linear-gradient(
+        -135deg,
+        transparent .5rem, 
+        gold 0, gold .75rem,
+        transparent 0, transparent 1rem, 
+        gold 0, gold 1.25rem,
+        transparent 0, transparent 1.5rem, 
+        gold 0
+      ),
+      linear-gradient(
+        45deg,
+        transparent .5rem, 
+        gold 0, gold .75rem,
+        transparent 0, transparent 1rem, 
+        gold 0, gold 1.25rem,
+        transparent 0, transparent 1.5rem, 
+        gold 0
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 1.25rem, 
+        gold 0
+      );
+}
 
 #topologyLinkToolTip{
-    margin-top: -8em;
-
-    mask-image: 
-    radial-gradient(
-      circle at 1.5rem 1.5rem,
-      transparent 0, transparent 1rem, 
-      gold 0, gold 1.25rem,
-      transparent 0, transparent 1.5rem, 
-      gold 0
-    );
-  mask-position: -1.5rem -1.5rem;
-  mask-repeat: repeat;
-
-  
+    mask-image: var(--circleBorder);
+    mask-position: -1.5rem -1.5rem;
+    mask-repeat: repeat;
 }
 .angledBox:hover .toolTips{
     opacity: 1;
@@ -271,106 +298,37 @@ height: 100%;
 #randomisedCirclesLinkToolTip{
     right: 2em;
     left: auto;
-    margin-top: -8em;
 
-    mask-image: 
-    radial-gradient(
-      circle at 1.5rem 1.5rem,
-      transparent 0, transparent 1rem, 
-      gold 0, gold 1.25rem,
-      transparent 0, transparent 1.5rem, 
-      gold 0
-    );
-  mask-position: -1.5rem -1.5rem;
-  mask-repeat: repeat;
+    mask-image:var(--circleBorder);
+    mask-position: -1.5rem -1.5rem;
+    mask-repeat: repeat;
 }
 
 
 #listedBuildingLinkToolTip{
-    margin-top: -8em;
-
     border-radius: 0px / 0px;
 
-    mask-image: 
-    linear-gradient(
-      135deg,
-      transparent 1.25rem, 
-      gold 0
-    ),
-    linear-gradient(
-      -135deg,
-      transparent .5rem, 
-      gold 0, gold .75rem,
-      transparent 0, transparent 1rem, 
-      gold 0, gold 1.25rem,
-      transparent 0, transparent 1.5rem, 
-      gold 0
-    ),
-    linear-gradient(
-      45deg,
-      transparent .5rem, 
-      gold 0, gold .75rem,
-      transparent 0, transparent 1rem, 
-      gold 0, gold 1.25rem,
-      transparent 0, transparent 1.5rem, 
-      gold 0
-    ),
-    linear-gradient(
-      -45deg,
-      transparent 1.25rem, 
-      gold 0
-    );
-  mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
-  mask-repeat: no-repeat;
-  mask-size: 51% 51%;
+    mask-image: var(--stripedBorder);
+    mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    mask-repeat: no-repeat;
+    mask-size: 51% 51%;
     
 }
 
 #thisSiteLinkToolTip{
-    margin-top: -8em;
     right: 2em;
     left: auto;
+    border-radius: 0px / 0px;
 
-    mask-image: 
-    linear-gradient(
-      135deg,
-      transparent 1.25rem, 
-      gold 0
-    ),
-    linear-gradient(
-      -135deg,
-      transparent .5rem, 
-      gold 0, gold .75rem,
-      transparent 0, transparent 1rem, 
-      gold 0, gold 1.25rem,
-      transparent 0, transparent 1.5rem, 
-      gold 0
-    ),
-    linear-gradient(
-      45deg,
-      transparent .5rem, 
-      gold 0, gold .75rem,
-      transparent 0, transparent 1rem, 
-      gold 0, gold 1.25rem,
-      transparent 0, transparent 1.5rem, 
-      gold 0
-    ),
-    linear-gradient(
-      -45deg,
-      transparent 1.25rem, 
-      gold 0
-    );
-  mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
-  mask-repeat: no-repeat;
-  mask-size: 51% 51%;
-
+    mask-image: var(--stripedBorder);
+    mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    mask-repeat: no-repeat;
+    mask-size: 51% 51%;
 }
 
 #ThisSiteTitle{
     margin-bottom: -15px;
 }
-
-
 
 #splitRight:hover .angledBox{
     width: 30%;
