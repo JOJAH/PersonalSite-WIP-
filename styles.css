@@ -305,6 +305,11 @@ height: 100%;
       );
 }
 
+.angledBoxRight >.toolTips{
+    right: 2em;
+    left: auto;
+}
+
 #topologyLinkToolTip{
     mask-image: var(--circleBorder);
     mask-position: -1.5rem -1.5rem;
@@ -316,8 +321,7 @@ height: 100%;
 }
 
 #randomisedCirclesLinkToolTip{
-    right: 2em;
-    left: auto;
+    
 /*https://codepen.io/yoksel/pen/abOaKYv*/
     mask-image:var(--circleBorder);
     mask-position: -1.5rem -1.5rem;
@@ -326,6 +330,7 @@ height: 100%;
 
 
 #listedBuildingLinkToolTip{
+
     border-radius: 0px / 0px;
 /*https://codepen.io/yoksel/pen/abOaKYv*/
     mask-image: var(--stripedBorder);
@@ -336,8 +341,6 @@ height: 100%;
 }
 
 #thisSiteLinkToolTip{
-    right: 2em;
-    left: auto;
     /*https://codepen.io/yoksel/pen/abOaKYv*/
     border-radius: 0px / 0px;
 
