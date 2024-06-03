@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jektris</title>
+</head>
+<body>
+    <div id="wholeContainer">
+        <div class="sides">
+            <p id="backgroundDisplay"></p>
+        </div>
+        <div id="middle">
+            <div id="header">
+                <h2>Jektris</h1>
+                <button id="startReloadButton" onclick="startGame()">Start</button>
+            </div>
+            <div id="tetrisContainer"></div>
+            <div id="scoreContainer">
+                <div>
+                    <p>SCORE: <br><span id="score"> 0</span>
+                </div>
+                <div id="levelDiv">
+                    <p>LEVEL: <br><span id="level"> 1</span></p></p>
+                </div>
+                  
+            </div>
+                <div class="movementKeyContainer">
+                    <div class="key" id="hold">H</div>
+                    <div class="key"id ="up">🡹</div>
+                    <div class="key" id="pause">P</div>
+                    <div class="key" id="left">🡸</div>
+                    <div class="key" id="down">🡻</div>
+                    <div class="key" id="right">🡺</div>
+
+                </div>
+            
+        </div>
+        <div class="sides" id="right">
+            <div>
+                <div id="nextTitle">Next Tetrad:</div>
+                <div id="nextTetradContainer"></div>
+                <div id="heldTitle">Held Tetrad:</div>
+                <div id="heldTetradContainer"></div>
+            </div>
+
+            <div>
+                
+            </div>
+            
+        </div>
+    </div>
+<style>
+    html, body{
+        height: 75%;
+        margin: 0px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    #wholeContainer{
+        display: flex; 
+        height: 100%;
+    }
+    #tetrisContainer{
+        display: grid;
+        grid-template-columns: repeat(10, 3vh);
+        
+    }
+    #header{
+        display: flex;
+    }
+    h2{
+        margin: 0.5vh;
+    }
+    #startReloadButton{
+        width: 100%;
+        margin: 2px;
+        background-color: black;
+        color: white;
+        border-radius: 5px; 
+    }
+    #startReloadButton:hover{
+        background-color: rgba(0, 0, 0, 0.404);
+    }
+    .sides{
+        width: 50%;
+        
+    }
+    #backgroundDisplay{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+    #backgroundDisplay > span{
+        margin: 1px;
+        margin-bottom: 2px;
+        height: 12px;
+        flex: 0 0 auto;
+        display: inline-block;
+        text-align: center;
+        align-content: center;
+        font-weight: bold;
+        top: 0;
+    }
+    .cell{
+        border: 1px solid black;
+        height: 3vh;
+    }
+    .ghostCell{
+        background-color: grey;
+    }
+    #scoreContainer > div > p{
+        margin: 1px;
+    }
+    #scoreContainer{
+        display: flex;
+        width: auto
+    }
+    #scoreContainer > div{
+        width: 50%;
+    }
+    .movementKeyContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .key{
+        flex: 0 0 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 7vh;
+        border: 2px solid black;
+        border-radius: 1vh;
+        font-weight: bold;
+
+    }
+
+    #heldTetradContainer, #nextTetradContainer{
+        display: grid;
+        justify-content: center;
+        margin-left: 5vh;
+        height: 5vh;
+    }
+    #right{
+        display: flex;
+    }
+    #nextTitle, #heldTitle{
+        margin-top: 5vh;
+        margin-left: 5vh;
+    }
+    .heldCell{
+        border: 1px solid black;
+        height: 3vh;
+        width: 3vh;
+    }
+</style>
+
+<script>
+    const numColumns = 10;
+    const numRows = 20;
+
+    const container = document.getElementById('tetrisContainer');
+    for(let i = 0; i < numColumns*numRows; i++){
+        const cell = document.createElement('div');
+        cell.setAttribute('class','cell')
+        container.appendChild(cell)
+    }
+
+    const Tetrads = {
+        I: [
+            [1,1,1,1]
+        ],
+
+        J: [
+            [1,0,0],
+            [1,1,1],
+        ],
+
+        L: [
+            [1,1,1],
+            [1,0,0]
+        ],
+
+        O: [
+            [1,1],
+            [1,1]
+        ],
+
+        S: [
+            [0,1,1],
+            [1,1,0]
+        ],
+    
+        Z: [
+            [1,1,0],
+            [0,1,1]
+        ],
+
+        T: [
+            [1,1,1],
+            [0,1,0]
+        ]
+    }
+    const TetradColours = {
+        I: 'rgb(43, 202, 226)',
+        J: 'rgb(15, 9, 190)',
+        L: 'rgb(240, 109, 44)',
+        O: 'rgb(216, 181, 22)',
+        S: 'rgb(99, 223, 23)',
+        Z: 'rgb(228, 54, 54)',
+        T: 'rgb(198, 23, 207)',
+    }
+
+    // set grid elements to empty
+    
+    let nextTetrad = null;
+    function getRandomTetrad(){
+        canHold = true;
+        rotated = false;
+        const tetradKeys = Object.keys(Tetrads)
+        let tetrad = tetradKeys[Math.floor(Math.random()*7)]
+        
+        if(nextTetrad){
+            if(tetrad == nextTetrad.type){
+            console.log('same')
+            tetrad = tetradKeys[Math.floor(Math.random()*7)]
+            }
+        }
+
+        if(tetrad == 'I'){
+            lowestPoint = -1;
+        }else{
+            lowestPoint = 0;
+        }
+        if(tetrad == 'O'){
+            x = 4;
+        }else{
+            x =3;
+        }
+
+        return {
+            type:tetrad,
+            shape:Tetrads[tetrad],
+            colour: TetradColours[tetrad],
+            x: x,
+            y: 0,
+            lowestPoint: lowestPoint
+        }
+    }
+
+
+
+    function createTetrad(){
+        const {shape, colour, x , y} = activeTetrad;
+        shape.forEach((row, i) =>{
+            row.forEach((cell, j)=>{
+                if(cell == 1){
+                    index = (y+i) * numColumns + (x + j);
+                    cells[index].style.background = colour
+                    cells[index].classList.add('moving');
+                }
+            });
+        });
+
+        
+    }
+
+    function removeTetrad(){
+        const {shape, colour, x , y} = activeTetrad;
+        shape.forEach((row, i) =>{
+            row.forEach((cell, j)=>{
+                if(cell == 1){
+                    index = (y + i) * numColumns + (x + j);
+                    cells[index].style.removeProperty('background');
+                    cells[index].classList.remove('moving');
+                }
+            });
+        });
+    }
+
+    function checkCollision(x, y, shape){
+        x = x || activeTetrad.x;
+        y = y || activeTetrad.y;
+        shape = shape || activeTetrad.shape;
+
+        for(let i = 0; i < shape.length; i++){
+            for(let j = 0; j < shape[i].length; j++){
+                if(shape[i][j] == 1){
+                    const lowerY = y+i;
+                    const rightX = x+j;
+                    if(lowerY >= numRows || grid[lowerY][x+j] == 1){
+                        activeTetrad.y--
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+
+    function placeTetrad(){
+        const {shape, x ,y, colour} = activeTetrad;
+        let rowsCleared = 0;
+        previousTetrad = activeTetrad.type;
+        
+    // add placedTetrad to the background Display
+        let backgroundDisplay = document.getElementById('backgroundDisplay');
+        const span = document.createElement('span');
+        span.textContent = previousTetrad;
+        span.style.color = colour;
+        backgroundDisplay.append(span);
+
+        shape.forEach((row, i)=>{
+            row.forEach((cell, j) =>{
+                if(cell == 1){
+                    grid[y+i][x+j] = 1
+
+                // update completed Rows   
+                    if(!grid[y+i].includes(0)){
+                        rowsCleared++;
+                        
+                            for(let row = y+i; row>0; row--){
+                                for(let col = 0; col <numColumns; col++){
+                                    grid[row][col] = grid[row-1][col];
+                                    const cell = cells[row * numColumns + col];
+                                    const cellAbove = cells[(row-1) * numColumns + col];
+                                    if(grid[row][col]===1){
+                                        cell.style.background = cellAbove.style.background;
+                                    }else{
+                                        cell.style.removeProperty('background');
+                                    }
+                                }
+                            }
+                            
+                        //update total Cleared Rows and Levelling system
+                            totalRowsCleared++;
+                            console.log(totalRowsCleared)
+                            if(totalRowsCleared % 10 == 0){
+                                level++
+                                document.getElementById('level').innerHTML = level;
+                                gameSpeed = gameSpeed * 0.9;
+                                clearInterval(runGame);
+                                runGame = setInterval(moveTetradDown, gameSpeed);
+                            }
+
+                    }
+                    
+                }
+            });
+            
+        });
+        
+        if(rowsCleared == 1){
+            score += (100 + (50 * combiLevel)) * level;
+        }if(rowsCleared == 2){
+            score += (300 + (50 * combiLevel)) * level;
+        }if(rowsCleared == 3){
+            (score += 500 + (50 * combiLevel)) * level;
+        }if(rowsCleared == 4){
+            (score+= 800 + (50 * combiLevel)) * level;
+        }
+        if(rowsCleared == 0){
+            combiLevel = 0;
+        }else{
+            combiLevel++;
+        }
+        document.getElementById('score').innerHTML = score;
+    }
+
+
+    function moveTetradDown(){
+        removeTetrad();
+        activeTetrad.y++;
+        activeTetrad.lowestPoint++;
+        
+        if(checkCollision()){
+            createTetrad();
+            placeTetrad();
+            
+            activeTetrad = nextTetrad;
+            nextTetrad = getRandomTetrad();
+            renderTetradHoldNext(nextTetrad,'nextTetradContainer');
+        }
+        createTetrad();
+        
+        if(checkCollision()){
+            play = false;
+            clearInterval(runGame);
+        }
+    }
+
+
+    function rotateTetrad(){
+        //checking state of rotate for holding
+        if(!rotated){
+            rotated = true;
+        }else{
+            rotated = false;
+        }
+        let {shape, x , y, lowestPoint} = activeTetrad;
+
+        const rotatedColumn = shape.length;
+        const rotatedRow = shape[0].length;
+        const yDifference = rotatedRow-rotatedColumn;
+        const newLowestPoint = lowestPoint + yDifference;
+   
+        let rotatedShape = []
+        for( let col = 0; col < rotatedRow; col++){
+            newRow = [];
+            for( let row = rotatedColumn -1 ; row >= 0; row--){ // iterates downwards as to rotate 90 degrees 
+                newRow.push(shape[row][col]);
+            
+            //rotation collision check
+                let newX = x + row;
+                let newY = y+ col;
+                if(grid[newY][newX] == 1){
+                   return
+                }
+            }
+            rotatedShape.push(newRow);
+        }
+    //stop tetrad rotatoing over the right border
+        if(rotatedShape[0].length + x >= numColumns){
+            x = numColumns - rotatedShape[0].length;
+        }
+
+        removeTetrad();
+        activeTetrad.shape = rotatedShape;
+        activeTetrad.x = x;
+        activeTetrad.lowestPoint = newLowestPoint;
+        createTetrad();
+    }
+    
+
+    function moveLeft(){
+        let {shape, x , y} = activeTetrad;
+        if(x > 0){
+        //adds collision for moving terads with placed tetrads when moving left
+            for(let i = 0; i < shape.length; i++){
+                for(let j = 0; j < shape[i].length; j++){
+                    if(shape[i][j] == 1){
+                        const leftX = x - 1 + j;
+                        if(grid[y+i][leftX] == 1){
+                            return
+                        }
+                    }
+                }
+            }
+        removeTetrad();
+            activeTetrad.x--;
+            createTetrad();
+        }
+    }
+    function moveRight(){
+        let {shape, x , y} = activeTetrad;
+        //stop right side overspill
+        const width = activeTetrad.shape[0].length;
+            if(activeTetrad.x < numColumns - width){
+
+            //adds collision for moving terads with placed tetrads when moving Right
+                for(let i = 0; i < shape.length; i++){
+                    for(let j = 0; j < shape[i].length; j++){
+                        if(shape[i][j] == 1){
+                            const rightX = x + 1 + j;
+                            if(grid[y+i][rightX] == 1){
+                                return
+                            }
+                        }
+                    }
+            
+                }   
+                removeTetrad();
+                activeTetrad.x++;
+                createTetrad();
+                }
+
+    }
+    function moveDown(){
+        removeTetrad();
+        activeTetrad.y++;
+        activeTetrad.lowestPoint++;
+        if(checkCollision()){
+            createTetrad();
+            placeTetrad();
+            
+            activeTetrad = nextTetrad;
+            nextTetrad = getRandomTetrad();
+            renderTetradHoldNext(nextTetrad,'nextTetradContainer');
+        }
+        createTetrad();
+        
+        if(checkCollision()){
+            clearInterval(runGame);
+        }
+    }
+
+    function changeKeyColour(direction, background, arrow){
+        key = document.getElementById(direction)
+                key.style.background = background;
+                key.style.color = arrow;
+    }
+
+    function renderTetradHoldNext(renderTetrad,containerId){
+            const heldContaner = document.getElementById(containerId);
+            heldContaner.innerHTML = '';
+            heldContaner.style.gridTemplateColumns = 'repeat('+renderTetrad.shape[0].length+',3vh)'
+
+            renderTetrad.shape.forEach((row, i)=>{
+                row.forEach((cell,j)=>{
+                    const heldCell = document.createElement('div');
+                    heldCell.setAttribute('class', 'heldCell');
+                    if(cell == 1){
+                        heldCell.style.background = renderTetrad.colour;
+                    }else{
+                        heldCell.style.border = 'none';
+                    }
+                    heldContaner.appendChild(heldCell)
+                });
+            });
+        }
+
+    function holdPiece(){
+        if(canHold){
+            canHold = false;
+
+            if(rotated){
+                rotateTetrad();
+            }
+
+            if(!heldTetrad){
+                heldTetrad = activeTetrad;
+                removeTetrad();
+                activeTetrad = nextTetrad;
+                nextTetrad = getRandomTetrad();
+            }else{
+                removeTetrad();
+                let holdingVar = heldTetrad;
+                heldTetrad = activeTetrad;
+                activeTetrad = holdingVar;
+                
+                activeTetrad.y = 0;
+
+                if(activeTetrad.type == 'I'){
+                    activeTetrad.lowestPoint = -1;
+                }else{
+                    activeTetrad.lowestPoint = 0;
+                }
+                if(activeTetrad.type == 'O'){
+                    activeTetrad.x = 4;
+                }else{
+                    activeTetrad.x = 3;
+                }
+            }
+            renderTetradHoldNext(heldTetrad,'heldTetradContainer');
+            renderTetradHoldNext(nextTetrad,'nextTetradContainer');
+            
+        }
+    }
+
+document.addEventListener('keydown', (event)=>{
+    if(play){
+
+        if(event.key === 'ArrowUp' || event.key === 'w'){
+            rotateTetrad()
+            changeKeyColour('up','black', 'white');
+        }
+        if(event.key === 'ArrowLeft' || event.key === 'a'){
+            moveLeft();
+            changeKeyColour('left','black', 'white');
+        }
+        if(event.key === 'ArrowRight' || event.key === 'd'){
+            moveRight();
+            changeKeyColour('right','black', 'white');
+        }
+        if(event.key === 'ArrowDown' || event.key === 's'){
+            moveDown();
+            changeKeyColour('down','black', 'white');
+        }
+        if(event.key === 'h'){
+            holdPiece();
+            changeKeyColour('hold','black', 'white');
+        }
+    }
+    if(event.key === 'p'){
+        if(play){
+            play = false;
+            clearInterval(runGame);
+            changeKeyColour('pause','red', 'black');
+        }else{
+            play = true;
+            runGame = setInterval(moveTetradDown, gameSpeed);
+            changeKeyColour('pause','white', 'black');
+        }
+    }
+});
+document.addEventListener('keyup', (event)=>{
+    if(event.key === 'ArrowUp' || event.key === 'w'){
+        changeKeyColour('up','white', 'black');
+    }
+    if(event.key === 'ArrowLeft' || event.key === 'a'){
+        changeKeyColour('left','white', 'black');
+    }
+    if(event.key === 'ArrowRight' || event.key === 'd'){
+        changeKeyColour('right','white', 'black');
+    }
+    if(event.key === 'ArrowDown' || event.key === 's'){
+        changeKeyColour('down','white', 'black');
+    }
+    if(event.key === 'h'){
+        changeKeyColour('hold','white', 'black');
+    }
+});
+
+function renderGhostTetrad(){
+    const {shape, colour, x, y} = activeTetrad;
+    let ghostY = y;
+/*
+    for(let i =0; i <cells.length; i++){
+        cells[i].classList.remove('ghostCell');
+    }
+*/
+
+    while(!checkCollision(x, ghostY + 1, shape)) {
+        ghostY++;
+    }
+  
+
+    shape.forEach((row, i)=>{
+        row.forEach((cell, j)=>{
+            if(cell ==1){
+                const index = (ghostY+i) * numColumns + (x+j);
+                cells[index].classList.add('ghostCell');
+            }
+        });
+    });
+}
+
+function removeGhostTetrad(){
+    
+}
+
+function startGame(){
+    if(!play){
+        grid = [];
+        for(let i=0; i< numRows; i++ ){
+            row = Array(numColumns).fill(0);
+            grid.push(row);
+        }
+        play = true;
+        let cells = document.getElementsByClassName('cell');
+        document.getElementById('startReloadButton').innerHTML = 'Reload';
+        // reset
+        score = 0;
+        document.getElementById('score').innerHTML = score;
+        level = 1;
+        document.getElementById('level').innerHTML = level;
+        let totalRowsCleared = 0;
+        let gameSpeed = 1000;
+
+        activeTetrad = getRandomTetrad();
+        nextTetrad = getRandomTetrad();
+
+
+        renderTetradHoldNext(nextTetrad,'nextTetradContainer');
+        createTetrad();
+        
+        
+        runGame = setInterval(moveTetradDown, gameSpeed);
+    }else{
+        play = false;
+        
+        document.getElementById('startReloadButton').innerHTML = 'Start';
+        document.getElementById('backgroundDisplay').innerHTML = '';
+        
+        for(let i = 0; i < cells.length; i++){
+            cells[i] = 0;
+            cells[i].style.removeProperty('background')
+            cells[i].classList.remove('moving');
+        }
+        activeTetrad = getRandomTetrad();
+        removeTetrad();
+        clearInterval(runGame);
+        heldTetrad = null;
+        const heldCells = document.getElementsByClassName('heldCell');
+        for(let i = 0; i < heldCells.length; i++){
+            heldCells[i].style.removeProperty('background')
+            heldCells[i].style.border = 'none';
+        }
+
+    }
+
+}
+
+let play = false;
+
+let grid = [];
+
+
+let cells = document.getElementsByClassName('cell');
+
+
+
+let activeTetrad;
+
+let level = 1;
+let score = 0;
+let totalRowsCleared = 0;
+let combiLevel = 0;
+let gameSpeed = 1000;
+
+let rotated;
+let canHold = true;
+
+let heldTetrad;
+
+let previousTetrad;
+
+let runGame;
+
+
+
+
+</script>
+
+</body>
+</html>

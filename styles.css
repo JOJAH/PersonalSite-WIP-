@@ -283,6 +283,26 @@ height: 100%;
         transparent 1.25rem, 
         gold 0
       );
+      --squareBorder:  conic-gradient(
+        from -90deg at 1.5rem 1.5rem, 
+        transparent .25turn, 
+        gold 0
+      ),
+      conic-gradient(
+        from 0deg at calc(100% - 1.5rem) 1.5rem, 
+        transparent .25turn, 
+        gold 0
+      ),
+      conic-gradient(
+        from 180deg at 1.5rem calc(100% - 1.5rem), 
+        transparent .25turn, 
+        gold 0
+      ),
+      conic-gradient(
+        from 90deg at calc(100% - 1.5rem) calc(100% - 1.5rem), 
+        transparent .25turn, 
+        gold 0
+      );
 }
 
 #topologyLinkToolTip{
@@ -298,7 +318,7 @@ height: 100%;
 #randomisedCirclesLinkToolTip{
     right: 2em;
     left: auto;
-
+/*https://codepen.io/yoksel/pen/abOaKYv*/
     mask-image:var(--circleBorder);
     mask-position: -1.5rem -1.5rem;
     mask-repeat: repeat;
@@ -307,7 +327,7 @@ height: 100%;
 
 #listedBuildingLinkToolTip{
     border-radius: 0px / 0px;
-
+/*https://codepen.io/yoksel/pen/abOaKYv*/
     mask-image: var(--stripedBorder);
     mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
     mask-repeat: no-repeat;
@@ -318,9 +338,18 @@ height: 100%;
 #thisSiteLinkToolTip{
     right: 2em;
     left: auto;
+    /*https://codepen.io/yoksel/pen/abOaKYv*/
     border-radius: 0px / 0px;
 
     mask-image: var(--stripedBorder);
+    mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    mask-repeat: no-repeat;
+    mask-size: 51% 51%;
+}
+
+#jektrisLinkToolTip{
+
+    mask-image: var(--squareBorder);
     mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
     mask-repeat: no-repeat;
     mask-size: 51% 51%;

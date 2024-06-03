@@ -100,6 +100,22 @@
             <div class="rightBox">
                 <div class="angledBox angledBoxRight">
                     <span class="projectLinks">       
+                        <a href="projects\Jektris\tetris.html">Jektris</a>
+                        <br>
+                        <a id="githubImgLink" href="https://github.com/JOJAH/TetrisWeb-WIP-"><img id="githubImg" src="assets/githubBlack.png" alt=""></a> 
+                    </span>
+                    <span id="jektrisLinkToolTip" class="toolTips">
+                        <p>
+                            This is a completey original game. Not at all Tetris. 
+                        </p>
+                    </span>
+                    
+                </div>
+            </div>
+
+            <div class="rightBox">
+                <div class="angledBox angledBoxLeft">
+                    <span class="projectLinks">       
                         <p id="ThisSiteTitle">This Site</p>
                         <br>
                         <a id="githubImgLink" href="https://github.com/JOJAH/personalSiteWIP"><img id="githubImg" src="assets/githubBlack.png" alt=""></a> 
@@ -108,14 +124,6 @@
                         <p>
                             Link to the github repo of this site. 
                         </p>
-                    </span>
-                </div>
-            </div>
-
-            <div class="rightBox">
-                <div class="angledBox angledBoxLeft">
-                    <span class="projectLinks">       
-                        <p>Coming Soon</p>
                     </span>
 
                 </div>
@@ -209,11 +217,15 @@ const toolTipBackgrounds = ['linear-gradient(90deg, rgba(0,240,11,0.824054621848
                             'linear-gradient(90deg, rgba(252,200,7,0.6980042016806722) 0%, rgba(244,176,49,0.829656862745098) 22%, rgba(252,0,255,0.8044467787114846) 59%, rgba(240,0,231,0.8240546218487395) 100%)',
                             'linear-gradient(90deg, rgba(252,200,7,0.6980042016806722) 0%, rgba(244,176,49,0.829656862745098) 22%, rgba(255,145,0,0.8044467787114846) 59%, rgba(255,27,27,0.8240546218487395) 100%)',
                             'linear-gradient(90deg, rgba(0,206,240,0.8240546218487395) 1%, rgba(0,255,231,0.8044467787114846) 22%, rgba(252,200,7,0.6980042016806722) 71%, rgba(244,176,49,0.829656862745098) 100%)',
-];
+                            'linear-gradient(90deg, rgba(7,226,252,0.6980042016806722) 0%, rgba(235,33,121,0.7004262886795343) 47%, rgba(220,19,104,0.697625168231355) 100%)',
+                            ];
 var i = 0;
 toolTips.forEach((toolTip)=>{
     toolTip.style.background = toolTipBackgrounds[i]
     i += 1
+    if(i ==5){
+        i=0
+    }
 });
 
 const angledBoxHeight = '15vh'
@@ -223,7 +235,7 @@ const angledBoxesBackgrounds =[
     angledBoxHeight + ' solid rgb(244, 165, 48,0.8)',
     angledBoxHeight + ' solid rgba(241,79,4,0.8)',
     angledBoxHeight + ' solid rgba(0, 224, 255, 0.8)'
-];
+                            ];
 
 var i = 0;
 angledBoxes.forEach((box)=>{
