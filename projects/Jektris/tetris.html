@@ -7,6 +7,7 @@
 </head>
 <body>
     <div id="wholeContainer">
+        <iframe src="../../assets/backArrow.html" frameborder="0" ></iframe>
         <div class="sides">
             <p id="backgroundDisplay"></p>
         </div>
@@ -56,6 +57,11 @@
         margin: 0px;
         font-family: 'Courier New', Courier, monospace;
     }
+    iframe{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    }
     #wholeContainer{
         display: flex; 
         height: 100%;
@@ -90,6 +96,7 @@
         flex-wrap: wrap;
         margin-right: 8px;
         margin-left: 8px;
+        margin-top: 6vh;
     }
     #backgroundDisplay > span{
         margin: 1px;
